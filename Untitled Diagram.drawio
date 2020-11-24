@@ -1,35 +1,59 @@
-<mxfile host="app.diagrams.net" modified="2020-11-23T16:32:27.042Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 Edg/86.0.622.69" etag="CfKlNzqmS1uDskWizTdx" version="13.10.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-24T18:43:55.552Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36 Edg/86.0.622.69" etag="yEgGNuaKW2onYYmXcMYv" version="13.10.1" type="github">
   <diagram id="0utHVczYUSiXWPUGwOVk" name="Page-1">
-    <mxGraphModel dx="1006" dy="717" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5030" dy="3345" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Vwe0XmgU0pZh7CUIuM2c-1" value="Pet Hotel&lt;br&gt;&lt;br&gt;&lt;br&gt;MVC&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="180" width="210" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="Vwe0XmgU0pZh7CUIuM2c-2" value="Landing Page&lt;br&gt;&amp;nbsp;&lt;br&gt;COMPONENTS&lt;br&gt;-login/sign-up button&lt;br&gt;-footer&lt;br&gt;-center image&lt;br&gt;-" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxCell id="Vwe0XmgU0pZh7CUIuM2c-2" value="Landing Page&lt;br&gt;&amp;nbsp;&lt;br&gt;COMPONENTS&lt;br&gt;-login/sign-up button&lt;br&gt;-footer&lt;br&gt;-center image&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="305" y="390" width="160" height="160" as="geometry" />
         </mxCell>
         <mxCell id="Vwe0XmgU0pZh7CUIuM2c-3" value="sign-up page&lt;br&gt;-create user in database using post method&lt;br&gt;-secure password&lt;br&gt;-" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="260" y="590" width="140" height="140" as="geometry" />
+          <mxGeometry x="165" y="580" width="140" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="Vwe0XmgU0pZh7CUIuM2c-4" value="scheduling page:&lt;br&gt;&lt;br&gt;-creating database for the schedule&lt;br&gt;-schedule save(calendar control- collection)" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxCell id="Vwe0XmgU0pZh7CUIuM2c-4" value="scheduling page:&lt;br&gt;&lt;br&gt;-creating database for the schedule&lt;br&gt;-schedule save(calendar control- collection)&lt;br&gt;-renders cost&lt;br&gt;-availability,&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
           <mxGeometry x="200" y="770" width="190" height="190" as="geometry" />
         </mxCell>
         <mxCell id="Vwe0XmgU0pZh7CUIuM2c-5" value="login-page:&lt;br&gt;-user found in database&lt;br&gt;-redirects them to scheduling page" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
-          <mxGeometry x="430" y="590" width="140" height="140" as="geometry" />
+          <mxGeometry x="480" y="580" width="140" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="4mXOWuFGNiHWBbHIUCKJ-1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Vwe0XmgU0pZh7CUIuM2c-1" target="Vwe0XmgU0pZh7CUIuM2c-2">
+        <mxCell id="4mXOWuFGNiHWBbHIUCKJ-1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Vwe0XmgU0pZh7CUIuM2c-1" target="Vwe0XmgU0pZh7CUIuM2c-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="400" y="610" as="sourcePoint" />
             <mxPoint x="450" y="560" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="4mXOWuFGNiHWBbHIUCKJ-2" value="Adding Pet:&lt;br&gt;-taking recognized pet from database&lt;br&gt;-owner&lt;br&gt;-name&lt;br&gt;-type:&lt;br&gt;-breed&lt;br&gt;-size&lt;br&gt;-renders cost&lt;br&gt;-notes (ie, allergies, specific med. attention" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4mXOWuFGNiHWBbHIUCKJ-2" value="Adding Pet:&lt;br&gt;-taking recognized pet from database&lt;br&gt;-owner&lt;br&gt;-name&lt;br&gt;-type:&lt;br&gt;-breed&lt;br&gt;-size&lt;br&gt;-notes (ie, allergies, specific med. attention" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="405" y="770" width="250" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="4mXOWuFGNiHWBbHIUCKJ-5" value="* send a email day before check-in and confirmation ID upon scheduling" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="4mXOWuFGNiHWBbHIUCKJ-5" value="* send a email day before check-in and confirmation ID upon scheduling" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="310" y="980" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="CkOo3bGGlcg4BDXd3EiX-1" value="" style="endArrow=classic;html=1;exitX=0.694;exitY=0.983;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.033;entryY=0.171;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Vwe0XmgU0pZh7CUIuM2c-2" target="Vwe0XmgU0pZh7CUIuM2c-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="610" as="sourcePoint" />
+            <mxPoint x="440" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CkOo3bGGlcg4BDXd3EiX-2" value="" style="endArrow=classic;html=1;exitX=0.162;exitY=1.014;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="Vwe0XmgU0pZh7CUIuM2c-2" target="Vwe0XmgU0pZh7CUIuM2c-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="610" as="sourcePoint" />
+            <mxPoint x="440" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="330" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CkOo3bGGlcg4BDXd3EiX-3" value="" style="endArrow=classic;startArrow=classic;html=1;entryX=0.026;entryY=0.294;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Vwe0XmgU0pZh7CUIuM2c-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="304" y="621" as="sourcePoint" />
+            <mxPoint x="440" y="560" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="420" y="622" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
