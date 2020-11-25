@@ -34,17 +34,17 @@ With instruction from [Filipe Laborde-Basto](https://github.com/c0dehot) and [Da
 
 ## ☕ License:
 
-For more information about the license, click on the link below.
+For more information about the MIT license, click on the link below.
 
 - [License](https://choosealicense.com/licenses/mit/)
 
 ## ❔ Questions:
 
-For questions about this project you can go to my GitHub page at the following link:
+For questions about this project you can go to this GitHub page at the following link:
 
 - [GitHub Profile](https://github.com/Halvosaurus34)
 
-For additional questions please reach out to me at: lhalvorson34@gmail.com.
+For additional questions please reach out to the team at: lhalvorson34@gmail.com.
 
 ---
 
@@ -58,7 +58,7 @@ For additional questions please reach out to me at: lhalvorson34@gmail.com.
 
 ---
 
-We used [MongoDB](https://www.mongodb.com/) [Express](https://www.npmjs.com/package/express), [React](https://reactjs.org/) and [Node](https://nodejs.org/en/) to build this web app.
+We used [MongoDB](https://www.mongodb.com/), [Express](https://www.npmjs.com/package/express), [React](https://reactjs.org/) and [Node](https://nodejs.org/en/) to build this web app.
 
 ---
 
