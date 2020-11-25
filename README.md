@@ -24,6 +24,12 @@ Pet Hotel! is a booking app that lets users book their pets time at the pet hote
 
 With instruction from [Filipe Laborde-Basto](https://github.com/c0dehot) and [Daniel Cabellos](https://github.com/shibeknight)
 
+[Karim Kapadia](https://github.com/karimkapadia)
+[Aaron Kim](https://github.com/whiteowl00)
+[Brooklyn Minor](https://github.com/brooklynminor)
+[Levi Halvorson](https://github.com/Halvosaurus34)
+
+
 ## ☕ License:
 
 For more information about the license, click on the link below.
