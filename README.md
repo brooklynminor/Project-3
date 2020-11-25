@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg "License Badge")
 
-Pet Hotel! is a booking app that lets users book their pets time at the pet hotel!
+Pet Hotel! is a booking app that lets users book their pets time at the pet hotel! ** ADD MORE INFO
 
 ## 🍔 Getting started
 
@@ -14,7 +14,7 @@ Pet Hotel! is a booking app that lets users book their pets time at the pet hote
 
 ## 💥 Issues
 
-
+** NEED TO ADD INFO
 
 ## 🍤 Contribution:
 
@@ -42,15 +42,15 @@ For additional questions please reach out to me at: lhalvorson34@gmail.com.
 
 ## 🎯 Links
 
-[Deployed Eat-Da-Burger Website](https://mighty-plains-09703.herokuapp.com/)
+[Deployed Pet Hotel Website]()
 
 ---
 
-[Eat-Da-Burger GitHub Repository](https://github.com/Halvosaurus34/Eat-Da-Burger)
+[Pet Hotel GitHub Repository](https://github.com/brooklynminor/Project-3)
 
 ---
 
-I used [Express](https://www.npmjs.com/package/express), [mySQL](https://dev.mysql.com/doc/) and [Handlebars](https://handlebarsjs.com/) to build this web app.
+We used [MongoDB](https://www.mongodb.com/) [Express](https://www.npmjs.com/package/express), [React](https://reactjs.org/) and [Node](https://nodejs.org/en/) to build this web app.
 
 ---
 
