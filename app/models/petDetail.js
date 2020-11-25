@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 
-const petSchema = mongoose.Schema;
-({
-    ownerName:{
+const Schema = mongoose.Schema;
+
+const petSchema = new Schema ({
+  ownerName:{
     type: String,
     trim: true,
     required: true,
-
-    },
+  },
   petName: {
     type: String,
     trim: true,
@@ -28,13 +28,12 @@ const petSchema = mongoose.Schema;
     trim: true,
     default: "No special instructions",
   },
-
   date: {
     type: Date,
     default: Date.now,
   },
 });
-const Pet = mongoose.model("Pet", petSchema);
+const Pets = mongoose.model("Pets", petSchema);
 
-module.exports = Pet;
+module.exports = Pets;
 

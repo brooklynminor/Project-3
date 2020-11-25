@@ -1,24 +1,24 @@
 
 const express = require("express");
-const path = require("path");
-const PORT = process.env.PORT || 3001;
+const mongoose = require("mongoose");
+
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
-app.use([
-    express.urlencoded({ extended: true }),
-    express.json()
-]);
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.use(express.static("public"));
 
-// Link API Routes here
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/petHotel_db", {
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
+// routes
+app.use(require("./app/routes/api.js"));
+
 app.listen(PORT, () => {
-  console.log("🚀  Server server now on port", PORT, "👻 React App on Port 3000");
+  console.log(`App running on port ${PORT}!`);
 });
