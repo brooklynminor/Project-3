@@ -24,7 +24,12 @@ const scheduleSchema = new Schema({
   checkOut: {
     type: Date,
     default: Date.now
-  }
+  },
+  note: {
+    type: String,
+    trim: true,
+    default: "No special instructions",
+  },
 
 });
 
