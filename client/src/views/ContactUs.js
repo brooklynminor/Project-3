@@ -13,9 +13,6 @@ function RegisterPet(props) {
       <div className="row">
         <div className="col">
             <Form
-            name={props.name}
-            email={props.email}
-            message={props.message}
             />
       </div>
     </div>
