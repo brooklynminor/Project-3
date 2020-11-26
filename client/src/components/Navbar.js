@@ -5,7 +5,7 @@ export default function LoginBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <NavLink className="navbar-brand" to="/">
-        Home
+        Pet Hotel
       </NavLink>
       <button
         className="navbar-toggler"
@@ -22,7 +22,10 @@ export default function LoginBar() {
         <ul className="navbar-nav">
           <li className="nav-item">
             <NavLink className="nav-link" to="/loginin">
-              <button></button>
+            </NavLink>
+            <NavLink className="nav-link" to="/calendar">
+            </NavLink>
+            <NavLink className="nav-link" to="/registerpet">
             </NavLink>
           </li>
         </ul>

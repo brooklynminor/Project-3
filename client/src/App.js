@@ -3,18 +3,17 @@ import "./App.css";
 
 import Card from "./components/Card";
 import LoginForm from "./components/LoginForm";
-import LoginBar from "./components/LoginBar";
-import SubmitForm from "./components/SubmitForm";
+
+import Calendar from "./components/Calendar";
 import Navbar from "./components/Navbar";
 
-import SignUp from "./views/SignUp";
+import Schedule from "./views/Schedule";
 import Profile from "./views/Profile";
 import RegisterPet from "./views/RegisterPet";
 import EmergencyContact from "./views/EmergencyContact";
 import AboutUs from "./views/AboutUs";
-import Login from "./views/Login";
 import AboutUs from "./views/AboutUs";
-import Calendar from "./views/Calendar";
+
 
 import React from "react";
 
