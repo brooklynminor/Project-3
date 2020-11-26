@@ -1,8 +1,6 @@
 
-import "./App.css";
-
-import Card from "./components/Card";
-import LoginForm from "./components/LoginForm";
+import React from 'react';
+import './App.css';
 
 import Calendar from "./components/Calendar";
 import Navbar from "./components/Navbar";
@@ -12,11 +10,7 @@ import Profile from "./views/Profile";
 import RegisterPet from "./views/RegisterPet";
 import EmergencyContact from "./views/EmergencyContact";
 import AboutUs from "./views/AboutUs";
-import AboutUs from "./views/AboutUs";
-
-
-import React from "react";
-
+import Login from "./views/Login";
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,12 +18,16 @@ import {
   Link,
 } from "react-router-dom";
 
+
+
 function App() {
   return (
     <div>
-      <Navbar />
+
+     <Navbar />
       <div className="container">
         <Switch>
+          <Route path="/login"><Login/></Route>
           <Route path="/profile">
             <Profile />
           </Route>
@@ -47,6 +45,12 @@ function App() {
           </Route>
         </Switch>
       </div>
+
+    
+      <div class="App-footer">
+        <p>@Project Team Name</p>
+      </div>
+    
     </div>
   );
 }
