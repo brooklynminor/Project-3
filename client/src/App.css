@@ -39,7 +39,14 @@ header a{
  align-items: center;
  justify-content: center;
  text-align: center;
- 
+ background-image: url(https://royailekennel.com/wp-content/uploads/2015/06/background-paws-texture-blue.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ padding: 20px;
+}
+
+.card{
+  max-width: 900px;
 }
 
 .App-footer{
