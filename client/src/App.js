@@ -1,17 +1,13 @@
-
 import "./App.css";
-
-import Card from "./components/Card";
-import LoginForm from "./components/LoginForm";
+// import Card from "./components/Card";
 
 import Calendar from "./components/Calendar";
 import Navbar from "./components/Navbar";
 
-import Schedule from "./views/Schedule";
+// import Schedule from "./views/Schedule";
 import Profile from "./views/Profile";
 import RegisterPet from "./views/RegisterPet";
-import EmergencyContact from "./views/EmergencyContact";
-import AboutUs from "./views/AboutUs";
+// import SubmitForm from "./views/SubmitForm";
 import AboutUs from "./views/AboutUs";
 
 
@@ -39,11 +35,8 @@ function App() {
           <Route path="/registerpet">
             <RegisterPet />
           </Route>
-          <Route path="/contactinformation">
-            <ContactInformation />
-          </Route>
           <Route path="/">
-            <Home />
+            <AboutUs />
           </Route>
         </Switch>
       </div>
