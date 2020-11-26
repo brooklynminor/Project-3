@@ -33,7 +33,9 @@ const petSchema = new Schema ({
     default: Date.now,
   },
 });
+
 const Pets = mongoose.model("Pets", petSchema);
 
 module.exports = Pets;
+
 
