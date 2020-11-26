@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.css";
+
+import Card from "./components/Card";
+import LoginForm from "./components/LoginForm";
+
+import Calendar from "./components/Calendar";
+import Navbar from "./components/Navbar";
+
+import Schedule from "./views/Schedule";
+import Profile from "./views/Profile";
+import RegisterPet from "./views/RegisterPet";
+import EmergencyContact from "./views/EmergencyContact";
+import AboutUs from "./views/AboutUs";
+import AboutUs from "./views/AboutUs";
+
+
+import React from "react";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <div className="container">
+        <Switch>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/calendar">
+            <Calendar />
+          </Route>
+          <Route path="/registerpet">
+            <RegisterPet />
+          </Route>
+          <Route path="/contactinformation">
+            <ContactInformation />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 }
