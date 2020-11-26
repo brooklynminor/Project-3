@@ -14,11 +14,11 @@ import AboutUs from "./views/AboutUs";
 import React from "react";
 
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-} from "react-router-dom";
+  // Link,
+} from "react";
 
 function App() {
   return (
