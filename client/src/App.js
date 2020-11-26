@@ -8,8 +8,8 @@ function App() {
     <div>
       <header class="App-header">
         <h1 class="col-sm-8">Pet Hotel</h1>
-        <p class="col-sm-2">Contact</p>
-        <p class="col-sm-2">About Us</p>
+        <a href="#" class="col-sm-2">Contact</a>
+        <a href="#" class="col-sm-2">About Us</a>
 
       </header>
 
@@ -23,11 +23,16 @@ function App() {
             <Form>
               <Form.Control type="email" placeholder="ID : Email"/>
               <Form.Control type="password" placeholder="Password" style={{marginTop:10}}/>
+              <Form.Text class="text-muted fs-6">
+                If you don't have ID yet, Please join us<a href="#" class="stretched-link"> Now.</a> 
+              </Form.Text>
             </Form>
             
           </Card.Body>
           <Button>Login</Button>
+          
         </div>
+
       </div>
 
       <div class="App-footer">

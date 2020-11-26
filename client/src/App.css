@@ -25,6 +25,11 @@
   color: white;
 }
 
+header a{
+ text-decoration: none;
+ color: white;
+}
+
 .App-body{
  color: #282c34;
  min-height: 80vh;
