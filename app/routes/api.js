@@ -14,7 +14,7 @@ router.post("/api/Users", ({ body }, res) => {
 });
 
 router.post("/api/Users/add", ({ body }, res) => {
-  Users.insertOne(body)
+  Users.insertMany(body)
     .then(dbUsers => {
       res.json(dbUsers);
     })
@@ -45,7 +45,7 @@ router.post("/api/Schedule", ({ body }, res) => {
   });
   
   router.post("/api/Schedule/add", ({ body }, res) => {
-    Schedule.insertOne(body)
+    Schedule.insertMany(body)
       .then(dbUsers => {
         res.json(dbUsers);
       })
@@ -76,7 +76,7 @@ router.post("/api/Schedule", ({ body }, res) => {
   });
   
   router.post("/api/Pets/add", ({ body }, res) => {
-    Pets.insertOne(body)
+    Pets.insertMany(body)
       .then(dbUsers => {
         res.json(dbUsers);
       })
