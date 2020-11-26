@@ -3,10 +3,10 @@ import SubmitForm from "./components/SubmitForm";
 
 function RegisterPet(props) {
 
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.addItem(this.state.item);
-      }
+    // handleSubmit = event => {
+    //     event.preventDefault();
+    //     this.props.addItem(this.state.item);
+    // }
 
   return (
     <div>

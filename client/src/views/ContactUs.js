@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "./components/Form";
 
-function RegisterPet(props) {
+function ContactUs(props) {
+    const [ name, setName ] = useState("")
+    const [ email, setEmail ] = useState("")
+    const [ message, setMessage ] = useState("")
 
-    handleSubmit = event => {
+    function handleInputChange ( event ) {
+        const {name, value} =  event.target;
+        const {email, value} =  event.target;
+        const {message, value} =  event.target;
+
+        if( name === 'name' )
+        setName(value)
+        if( email=== 'email')
+        setEmail(value)
+        else if( message === 'message')
+        setMessage(value)
+    };
+
+    function handleInputSubmit(event){
         event.preventDefault();
-        this.props.addItem(this.state.item);
-      }
+        alert(`Thank you for Submitting ${name}`)
+        setName("")
+        setEmail("")
+        setMessage("")
+    }
 
   return (
     <div>
       <div className="row">
         <div className="col">
-            <Form
-            name={props.name}
-            email={props.email}
-            message={props.message}
-            />
+            <Form/>
       </div>
     </div>
   </div>
   );
 }
-export default RegisterPet;
+export default ContactUs;
