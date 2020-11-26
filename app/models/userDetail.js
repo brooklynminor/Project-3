@@ -25,6 +25,14 @@ const userDetail = new Schema({
     required: true
     
   },
+  emailAddress: {
+    type: String,
+    required:true
+  },
+  userPassword: {
+    type: String,
+    required:true
+  }
 });
 
 const User = mongoose.model("User", userDetail);
