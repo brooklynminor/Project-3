@@ -1,12 +1,12 @@
-import React from "react";
-import SubmitForm from "./components/SubmitForm";
+import React from "react"
+import SubmitForm from "../components/SumbitForm";
 
 function RegisterPet(props) {
 
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.addItem(this.state.item);
-      }
+    // handleSubmit = event => {
+    //     event.preventDefault();
+    //     this.props.addItem(this.state.item);
+    //   }
 
   return (
     <div>
