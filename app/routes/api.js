@@ -14,7 +14,7 @@ router.post("/api/Users", ({ body }, res) => {
 });
 
 router.post("/api/Users/add", ({ body }, res) => {
-  Users.insertOne(body)
+  Users.insertMany(body)
     .then(dbUsers => {
       res.json(dbUsers);
     })
@@ -24,7 +24,7 @@ router.post("/api/Users/add", ({ body }, res) => {
 });
 
 router.get("/api/Users", (req, res) => {
-  Users.find({})
+  Users.petHotel_db.find({})
     .sort({ date: -1 })
     .then(dbUsers => {
       res.json(dbUsers);
@@ -45,7 +45,7 @@ router.post("/api/Schedule", ({ body }, res) => {
   });
   
   router.post("/api/Schedule/add", ({ body }, res) => {
-    Schedule.insertOne(body)
+    Schedule.insertMany(body)
       .then(dbUsers => {
         res.json(dbUsers);
       })
@@ -75,8 +75,9 @@ router.post("/api/Schedule", ({ body }, res) => {
       });
   });
   
-  router.post("/api/Pets/add", ({ body }, res) => {
-    Pets.insertOne(body)
+  router.post("/api/Pets/add", ({body}, res) => {
+    console.log("THIS IS BODY: ",body)
+    Pets.insertMany(body)
       .then(dbUsers => {
         res.json(dbUsers);
       })
@@ -86,6 +87,7 @@ router.post("/api/Schedule", ({ body }, res) => {
   });
   
   router.get("/api/Pets", (req, res) => {
+    console.log("finding Pets!", res)
     Pets.find({})
       .sort({ date: -1 })
       .then(dbUsers => {
