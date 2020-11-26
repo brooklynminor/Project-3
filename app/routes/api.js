@@ -5,14 +5,16 @@ const Pet = require("../models/PetDetail.js");
 const User = require("../models/userDetail.js");
 const orm = require("../db/orm")
 
-router.post("/api/users/register", async ({ body }, res) => {
+router.post("/api/users/register", async (req, res) => {
+  console.log(req)
   const userData = {
     firstName:     req.body.firstName,
     lastName:      req.body.lastName,
-    emailAddress:  req.body.email,
-    userPassword:  req.body.password
+    phoneNumber:   req.body.phoneNumber,
+    emergencyNo:   req.body.emergencyNo,
+    emailAddress:  req.body.emailAddress,
+    userPassword:  req.body.userPassword
 };
-
 const userId = await orm.registerUser(userData);
 console.log( ' created user [orm.registerUser]: userId=', userId );
 
