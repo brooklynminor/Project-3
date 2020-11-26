@@ -33,7 +33,7 @@ const petSchema = new Schema ({
     default: Date.now,
   },
 });
-const Pets = mongoose.model("Pets", petSchema);
+const Pet = mongoose.model("Pet", petSchema);
 
-module.exports = Pets;
+module.exports = Pet;
 

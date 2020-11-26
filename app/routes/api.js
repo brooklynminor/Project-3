@@ -1,101 +1,81 @@
 const router = require("express").Router();
 const Users = require("../models/userDetail.js");
 const Schedule = require("../models/schedule.js");
-const Pets = require("../models/petDetail.js");
+const Pet = require("../models/PetDetail.js");
+const User = require("../models/userDetail.js");
 
-router.post("/api/Users", ({ body }, res) => {
-  Users.create(body)
-    .then(dbUsers => {
-      res.json(dbUsers);
-    })
-    .catch(err => {
-      res.status(400).json(err);
-    });
+router.post("/api/users", async ({ body }, res) => {
+  const user = new User(body);
+  console.log(user);
+
+  try {
+    const result = await user.save();
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
 });
 
-router.post("/api/Users/add", ({ body }, res) => {
-  Users.insertMany(body)
-    .then(dbUsers => {
-      res.json(dbUsers);
-    })
-    .catch(err => {
-      res.status(400).json(err);
-    });
+router.get("/api/users", async (req, res) => {
+  try {
+    const result = await User.find();
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
 });
 
-router.get("/api/Users", (req, res) => {
-  Users.petHotel_db.find({})
-    .sort({ date: -1 })
-    .then(dbUsers => {
-      res.json(dbUsers);
-    })
-    .catch(err => {
-      res.status(400).json(err);
-    });
+router.post("/api/schedule", async ({ body }, res) => {
+  const schedule = new Schedule(body);
+  console.log(schedule);
+
+  try {
+    const result = await Schedule.save(body);
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
 });
 
-router.post("/api/Schedule", ({ body }, res) => {
-    Schedule.create(body)
-      .then(dbUsers => {
-        res.json(dbUsers);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
-  
-  router.post("/api/Schedule/add", ({ body }, res) => {
-    Schedule.insertMany(body)
-      .then(dbUsers => {
-        res.json(dbUsers);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
-  
-  router.get("/api/Schedule", (req, res) => {
-    Schedule.find({})
-      .sort({ date: -1 })
-      .then(dbUsers => {
-        res.json(dbUsers);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
-  
-  router.post("/api/Pets", ({ body }, res) => {
-    Pets.create(body)
-      .then(dbUsers => {
-        res.json(dbUsers);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
-  
-  router.post("/api/Pets/add", ({body}, res) => {
-    console.log("THIS IS BODY: ",body)
-    Pets.insertMany(body)
-      .then(dbUsers => {
-        res.json(dbUsers);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-  });
-  
-  router.get("/api/Pets", (req, res) => {
-    console.log("finding Pets!", res)
-    Pets.find({})
-      .sort({ date: -1 })
-      .then(dbUsers => {
-        res.json(dbUsers);
-      })
-      .catch(err => {
-        res.status(400).json(err);
-      });
-    });
+router.get("/api/schedule/:username", async (req, res) => {
+  const userschedule = req.params.username
+  try {
+    const result = await Schedule.findOne({ownerName:userschedule});
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
+});
+
+router.get("/api/schedule", async (req, res) => {
+  try {
+    const result = await Schedule.find();
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
+});
+
+router.post("/api/pet", async ({ body }, res) => {
+  const petObj = new Pet(body);
+  try {
+    const result = await petObj.save();
+    console.log(result);
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
+});
+
+router.get("/api/pet/:ownerName", async (req, res) => {
+  const ownName = req.params.ownerName;
+  console.log(ownName);
+  try {
+    const result = await Pet.findOne({ ownerName: ownName });
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
+});
 
 module.exports = router;
