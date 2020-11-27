@@ -1,7 +1,8 @@
 import React, {useState} from "react";
+import Calendar from 'react-calendar'
 
 
-function Calendar() {
+function Schedule() {
        const [value, onChange] = useState(new Date());
      
       return (
@@ -13,4 +14,4 @@ function Calendar() {
         </div>
       );
     }
-export default Calendar;
+export default Schedule;

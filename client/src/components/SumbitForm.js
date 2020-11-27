@@ -7,7 +7,7 @@ function SubmitForm(props) {
   <form onSubmit={this.handleSubmit} method="post">
   <div className="form-group">
           <label for="exampleFormControlTextarea1">Upload Image:</label>
-          <img href='#' name='image' onChange={this.changeHandler} value={this.state.item.image} alt="..."/>
+          <img href='#' name='image' onChange={this.changeInputHandler} value={this.state.item.image} alt="..."/>
         </div>
       <div className="form-group">
           <label for="exampleFormControlInput1">Pet Name:</label>

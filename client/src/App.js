@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import Profile from "./views/Profile";
 import RegisterPet from "./views/RegisterPet";
 import AboutUs from "./views/AboutUs";
-import Login from "./views/Login";
+// import Login from "./views/Login";
 
 import {
   // BrowserRouter as Router,
@@ -27,9 +27,6 @@ function App() {
      <Navbar />
       <div className="container">
         <Switch>
-          <Route path="/login">
-            <Login/>
-            </Route>
           <Route path="/profile">
             <Profile />
           </Route>
