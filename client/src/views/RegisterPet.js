@@ -13,10 +13,10 @@ function RegisterPet(props) {
       <div className="row">
         <div className="col">
             <SubmitForm 
-            username={props.userId}
+            userid={props.userId}
             firstname={props.firstName}
             lastname={props.lastName}
-            petname={props.petName}
+            ownerName={props.petName}
             email={props.email}
             phonenumber={props.phoneNumber}
             image={props.image}
