@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import Form from "./components/Form";
 
 function ContactUs(props) {
-    const [ name, setName ] = useState("")
+    const [ firstName, setName ] = useState("")
     const [ email, setEmail ] = useState("")
     const [ message, setMessage ] = useState("")
 
     function handleInputChange ( event ) {
         const {name, value} =  event.target;
-        const {email, value} =  event.target;
-        const {message, value} =  event.target;
 
-        if( name === 'name' )
+
+        if( firstName === 'name' )
         setName(value)
         if( email=== 'email')
         setEmail(value)
@@ -21,7 +20,7 @@ function ContactUs(props) {
 
     function handleInputSubmit(event){
         event.preventDefault();
-        alert(`Thank you for Submitting ${name}`)
+        alert(`Thank you for Submitting ${firstName}`)
         setName("")
         setEmail("")
         setMessage("")

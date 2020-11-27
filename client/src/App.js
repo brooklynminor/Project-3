@@ -1,5 +1,6 @@
-import "./App.css";
-// import Card from "./components/Card";
+
+import React from 'react';
+import './App.css';
 
 import Calendar from "./components/Calendar";
 import Navbar from "./components/Navbar";
@@ -7,25 +8,28 @@ import Navbar from "./components/Navbar";
 // import Schedule from "./views/Schedule";
 import Profile from "./views/Profile";
 import RegisterPet from "./views/RegisterPet";
-// import SubmitForm from "./views/SubmitForm";
 import AboutUs from "./views/AboutUs";
-
-
-import React from "react";
+import Login from "./views/Login";
 
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Switch,
   Route,
-  Link,
+  // Link,
 } from "react-router-dom";
+
+
 
 function App() {
   return (
     <div>
-      <Navbar />
+
+     <Navbar />
       <div className="container">
         <Switch>
+          <Route path="/login">
+            <Login/>
+            </Route>
           <Route path="/profile">
             <Profile />
           </Route>
@@ -40,6 +44,12 @@ function App() {
           </Route>
         </Switch>
       </div>
+
+    
+      <div class="App-footer">
+        <p>@Project Team Name</p>
+      </div>
+    
     </div>
   );
 }
