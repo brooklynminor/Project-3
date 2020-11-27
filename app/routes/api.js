@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const Users = require("../models/userDetail.js");
 const Schedule = require("../models/schedule.js");
 const Pet = require("../models/PetDetail.js");
 const User = require("../models/userDetail.js");
@@ -16,6 +15,16 @@ router.post("/api/users/register", async (req, res) => {
     userPassword:  req.body.userPassword
 };
 const userId = await orm.registerUser(userData);
+
+const newUser = new User(userId);
+console.log("NEW USER:",newUser)
+  try {
+    const result = await User.save(userId);
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
+
 console.log( ' created user [orm.registerUser]: userId=', userId );
 
 if( !userId ){
@@ -25,9 +34,10 @@ if( !userId ){
 res.send( { status: true, message: `You are registered (userId: #${userId})!` } );
 });
 
-router.get("/api/users", async (req, res) => {
+router.get("/api/users/:firstName", async (req, res) => {
   try {
-    const result = await User.find();
+    const result = await User.findOne({firstName: req.params.firstName});
+    console.log("USER SEARCH RESULTS: ", result)
     res.send(result);
   } catch (err) {
     res.status(400).json(err.message);

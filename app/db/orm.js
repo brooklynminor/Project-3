@@ -17,10 +17,10 @@ async function registerUser( userData ){
     userData.userPassword = passwordHash;
     userData.emailAddress = userData.emailAddress.toLowerCase();
 
-    const result = new User(userData);
-
-    console.log( '[registerUser] complete save result: ', result );
-    return result._id;
+    // const result = new User(userData);
+    // const result2 = await 
+    console.log( '[registerUser] complete save result: ', userData );
+    return userData;
 }
 
 // input: email, password
