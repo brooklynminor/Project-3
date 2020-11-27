@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from "./components/Card";
-import LoginForm from "./components/LoginForm";
+// import Card from "./components/Card";
+// import LoginForm from "./components/LoginForm";
 import { Button, Card, Form } from 'react-bootstrap'
 
 
@@ -26,4 +26,6 @@ import { Button, Card, Form } from 'react-bootstrap'
           </div>
         </div>
         </div>
+
+export default Login
       
