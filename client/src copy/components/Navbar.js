@@ -1,7 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, {NavLink} from "react";
 
-export default function LoginBar() {
+function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <NavLink className="navbar-brand" to="/">
@@ -33,4 +32,4 @@ export default function LoginBar() {
     </nav>
   );
 }
-export default LoginBar;
+export default Navbar;

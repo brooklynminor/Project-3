@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const Users = require("../models/userDetail.js");
 const Schedule = require("../models/schedule.js");
 
 const Pet = require("../models/PetDetail.js");
@@ -8,7 +7,7 @@ const orm = require("../db/orm")
 
 router.post("/api/users/register", async (req, res) => {
   console.log(req)
-  const userData = {
+  let userData = {
     firstName:     req.body.firstName,
     lastName:      req.body.lastName,
     phoneNumber:   req.body.phoneNumber,
@@ -16,19 +15,31 @@ router.post("/api/users/register", async (req, res) => {
     emailAddress:  req.body.emailAddress,
     userPassword:  req.body.userPassword
 };
-const userId = await orm.registerUser(userData);
-console.log( ' created user [orm.registerUser]: userId=', userId );
+userData = await orm.registerUser(userData);
 
-if( !userId ){
+const newUser = new User(userData);
+console.log("NEW USER:",userData)
+  try {
+    const result = await newUser.save(userData);
+    console.log("save result: ",result)
+    res.send(result);
+  } catch (err) {
+    res.status(400).json(err.message);
+  }
+
+console.log( ' created user [orm.registerUser]: userId=', userData );
+
+if( !newUser ){
     return res.send( { status: false, message: 'Sorry failed to create the user, try later?' } );
 }
 
-res.send( { status: true, message: `You are registered (userId: #${userId})!` } );
+res.send( { status: true, message: `You are registered (userId: #${newUser._id})!` } );
 });
 
-router.get("/api/users", async (req, res) => {
+router.get("/api/users/", async (req, res) => {
   try {
-    const result = await User.find();
+    const result = await User.findOne({firstName: req.params.firstName});
+    console.log("USER SEARCH RESULTS: ", result)
     res.send(result);
   } catch (err) {
     res.status(400).json(err.message);
@@ -36,8 +47,9 @@ router.get("/api/users", async (req, res) => {
 });
 
 router.get("/api/users/login", async (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
+  const email = req.body.emailAddress;
+  const password = req.body.userPassword;
+  console.log(email, password)
   const userData = await orm.loginUser(email, password);
   console.log( '[/api/user/login] userData: ', userData);
   if( !userData ){
