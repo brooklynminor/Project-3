@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Schedule = require("../models/schedule.js");
-
+const email = require('../db/email')
 const Pet = require("../models/PetDetail.js");
 const User = require("../models/userDetail.js");
 const orm = require("../db/orm")
@@ -32,7 +32,8 @@ console.log( ' created user [orm.registerUser]: userId=', userData );
 if( !newUser ){
     return res.send( { status: false, message: 'Sorry failed to create the user, try later?' } );
 }
-
+console.log("Email Address in api.js: ", newUser.emailAddress)
+email.email(newUser)
 res.send( { status: true, message: `You are registered (userId: #${newUser._id})!` } );
 });
 
@@ -63,9 +64,11 @@ router.get("/api/users/login", async (req, res) => {
 router.post("/api/schedule", async ({ body }, res) => {
   const schedule = new Schedule(body);
   console.log(schedule);
-
+  const findUser = await User.findOne({firstName:body.ownerName})
+  console.log("FIND USER: ", findUser)
+  email.emailSchedule(schedule, findUser)
   try {
-    const result = await Schedule.save(body);
+    const result = await schedule.save(body);
     res.send(result);
   } catch (err) {
     res.status(400).json(err.message);
