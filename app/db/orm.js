@@ -52,6 +52,8 @@ async function loginUser( email, password ) {
         userId:         result._id,
         firstName:      result.firstName,
         lastName:       result.lastName,
+        phoneNumber:    result.phoneNumber,
+        emergencyNo:    result.emergencyNo,
         emailAddress:   result.emailAddress,
         createdAt:      ''
     };
