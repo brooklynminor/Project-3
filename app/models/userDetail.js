@@ -6,7 +6,7 @@ const userDetail = new Schema({
   firstName: {
     type: String,
     trim: true,
-    required: true
+    required: true,
     
   },
   lastName: {
@@ -33,6 +33,7 @@ const userDetail = new Schema({
     type: String,
     required:true
   }
+
 });
 
 const User = mongoose.model("User", userDetail);
