@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function SubmitForm(props) {
+function SubmitForm() {
   const [ item, setItem ]= useState({})
 
   function handleInputChange( event ){

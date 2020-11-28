@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "./components/Calendar";
 
-export default function Schedule(props) {
+function Schedule(props) {
   return (
     <div>
       <div className="row">

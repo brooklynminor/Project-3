@@ -19,7 +19,7 @@ function Form() {
   <form action="mailto:brooklynminor4@gmail.com" onSubmit={handleInputSubmit} method="post">
       <div className="form-group">
           <label for="exampleFormControlInput1">Name:</label>
-          <input type="text" value={item.firstname} onChange={handleInputChange} className="form-control" id="exampleFormControlInput1" placeholder="Enter your name"/>
+          <input type="text" value={item.name} onChange={handleInputChange} className="form-control" id="exampleFormControlInput1" placeholder="Enter your name"/>
         </div>
       <div className="form-group">
           <label for="exampleFormControlInput1">Email Address:</label>
