@@ -32,7 +32,7 @@ function SubmitForm() {
       </div>
       <div className="form-group">
         <label for="exampleFormControlInput1">First Name:</label>
-        <input type="text" onChange={handleInputChange} value={item.firstName} name='firstname' lassName="form-control" id="email" placeholder="Enter your first name" required/>
+        <input type="text" onChange={handleInputChange} value={item.firstName} name='firstname' className="form-control" id="email" placeholder="Enter your first name" required/>
       </div>
       <div className="form-group">
         <label for="exampleFormControlTextarea1">Last Name:</label>
