@@ -6,6 +6,9 @@ import {
   Link,
 } from "react-router-dom";
 import Calendar from "./Calendar";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+
 // import Schedule from "./views/Schedule";
 import Profile from "../views/Profile";
 import RegisterPet from "../views/RegisterPet";
@@ -33,6 +36,14 @@ function Navbar() {
                         <li className="nav-item active">
                             <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
+                    </ul>
+                    <ul className='navbar-nav ml-3 float-right'>
+                        <li className="nav-item active">
+                            <Link className="nav-link" to="/SignIn">Sign-In</Link>
+                        </li>
+                        <li className="nav-item active">
+                            <Link className="nav-link" to="/SignUp">Sign-Up</Link>
+                        </li>
 
                     </ul>
                 </div>
@@ -47,6 +58,13 @@ function Navbar() {
                 <Route path="/calendar">
                     <Calendar />
                 </Route>
+                <Route path="/SignIn">
+                    <SignIn />
+                </Route>
+                <Route path="/SignUp">
+                    <SignUp />
+                </Route>
+
                 <Route path="/">
                     <AboutUs />
                 </Route>
