@@ -1,6 +1,4 @@
 import React from 'react';
-// import Card from "./components/Card";
-// import LoginForm from "./components/LoginForm";
 import { Button, Card, Form } from 'react-bootstrap'
 
 function Login(){
