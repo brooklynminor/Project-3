@@ -3,7 +3,6 @@ import { Button, Card, Form } from 'react-bootstrap'
 
 function Login(){
   return(
-    <>
       <div class="row">  
       <div class="col-md-6">&nbsp;</div>
         <div class="col-md-6">
@@ -26,7 +25,6 @@ function Login(){
           </div>
         </div>
         </div>
-        </>
   )
 }
 

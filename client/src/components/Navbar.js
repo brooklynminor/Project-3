@@ -6,9 +6,9 @@ import {
   Link,
 } from "react-router-dom";
 import Calendar from "./Calendar";
+import BookNow from "./BookNow";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-
 // import Schedule from "./views/Schedule";
 import Profile from "../views/Profile";
 import RegisterPet from "../views/RegisterPet";
@@ -26,6 +26,9 @@ function Navbar() {
                     <ul className='navbar-nav ml-3'>
                         <li className="nav-item active">
                             <Link className="navbar-brand" to="/">Pet Hotel</Link>
+                        </li>
+                        <li className="nav-item active">
+                            <Link className="navbar-brand" to="/BookNow">Book Now</Link>
                         </li>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/profile">Profile</Link>
@@ -52,6 +55,10 @@ function Navbar() {
                 <Route path="/profile">
                     <Profile />
                 </Route>
+                <Route path="/BookNow">
+                    <BookNow />
+                </Route>
+
                 <Route path="/register">
                     <RegisterPet />
                 </Route>

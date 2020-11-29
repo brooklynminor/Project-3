@@ -35,7 +35,7 @@ class SignUpForm extends Component {
 
     render() {
         return (
-        <div className="container-md">
+        <div className="container-md  mt-5">
             <form onSubmit={this.handleSubmit} className="form-group">
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="name">Full Name</label>
@@ -57,7 +57,7 @@ class SignUpForm extends Component {
               </div>
 
               <div className="form-group">
-                  <button className="form-Button mr-20">Sign Up</button> <Link to="./SignIn.js" className="form-group__Link">I'm already member</Link>
+                  <button className="btn btn-primary mr-3 form-Button mr-20">Sign Up</button> <Link to="./SignIn.js" className="form-group__Link">I'm already member</Link>
               </div>
             </form>
           </div>
