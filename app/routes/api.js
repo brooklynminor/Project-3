@@ -37,7 +37,7 @@ email.email(newUser)
 res.send( { status: true, message: `You are registered (userId: #${newUser._id})!` } );
 });
 
-router.get("/api/users/", async (req, res) => {
+router.get("/api/users/search/:firstName", async (req, res) => {
   try {
     const result = await User.findOne({firstName: req.params.firstName});
     console.log("USER SEARCH RESULTS: ", result)
