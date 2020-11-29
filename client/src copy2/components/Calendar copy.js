@@ -6,7 +6,7 @@ function Schedule() {
        const [value, onChange] = useState(new Date());
      
       return (
-        <div className="container">
+        <div>
           <Calendar
             onChange={onChange}
             value={value}
