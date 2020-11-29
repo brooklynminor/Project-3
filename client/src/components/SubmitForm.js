@@ -20,7 +20,7 @@ function SubmitForm() {
     <form onSubmit={handleInputSubmit} method="post">
       <div className="form-group">
         <label for="exampleFormControlTextarea1">Upload Image:</label>
-        <img href='#' name='image' onChange={handleInputChange} value={item.image} alt="..."/>
+        <img href='https://via.placeholder.com/150' name='image' onChange={handleInputChange} value={item.image} alt="..."/>
       </div>
       <div className="form-group">
         <label for="exampleFormControlInput1">Pet Name:</label>
