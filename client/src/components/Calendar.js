@@ -23,11 +23,10 @@ function Schedule() {
       <DateRangePicker
         onChange={(item) => setState([item.selection])}
         showSelectionPreview={false}
-        value={this.state.startDate}
         moveRangeOnFirstSelection={true}
         months={1}
         ranges={state}
-        direction="horizontal"
+        
       />
     </div>
   );

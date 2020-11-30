@@ -9,7 +9,7 @@ function RegisterPet(props) {
     // }
 
   return (
-    <div>
+    <div className="container">
       <div className="row">
         <div className="col">
             <SubmitForm 
