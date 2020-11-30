@@ -4,7 +4,6 @@ import { Card } from "react-bootstrap";
 import API from "../utils/API";
 import SignUp from "./SignUp";
 import Profile from "../views/Profile";
-
 class SignInForm extends Component {
   constructor() {
     super();
@@ -36,6 +35,10 @@ class SignInForm extends Component {
     });
     console.log("In signin result:", result);
     if (result) {
+      localStorage.userId = ""
+      console.log(result)
+      localStorage.userId = result.userId
+      console.log("USERID IN SIGN IN: ", this.state.userId)
     }
     // console.log('The form was submitted with the following data:');
     // console.log(this.state);

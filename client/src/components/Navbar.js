@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   HashRouter as Router,
   Switch,
@@ -7,16 +7,28 @@ import {
 } from "react-router-dom";
 import Calendar from "./Calendar";
 import BookNow from "./BookNow";
-import SignIn from "./SignIn";
+import SignIn from "./signin";
 import SignUp from "./SignUp";
+import UserContext from "../utils/userContext";
+
 // import Schedule from "./views/Schedule";
 import Profile from "../views/Profile";
 import RegisterPet from "../views/RegisterPet";
 import Slider from "../components/Slider";
-
+import SignInForm from "./signin"
 
 function Navbar() {
+    const [id, setId] = useState([])
+    useEffect(() => {
+        loadId()
+      }, [])
+      function loadId(){
+          console.log("SET ID: ",SignInForm)
+        setId(SignInForm.userId?SignInForm.userId:"")
+      }
+    console.log("NAVBAR CONTEXT SIGN IN: ", SignInForm.userId)
   return (
+    <UserContext.Provider value={id}>
     <Router basename={process.env.PUBLIC_URL}>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark row">
                 <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,9 +41,6 @@ function Navbar() {
                         </li>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/BookNow">Book Now</Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
                     </ul>
                     <div class="dropdown col justify-content-end text-right">
@@ -85,6 +94,8 @@ function Navbar() {
             </Switch>
 
         </Router>
+        </UserContext.Provider>
+
   );
 }
 export default Navbar;

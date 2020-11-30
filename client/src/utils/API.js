@@ -31,7 +31,8 @@ const API = {
             }
         })
         if(result.data.status){
-            return true
+
+            return result.data
         } else {
             return false
         }

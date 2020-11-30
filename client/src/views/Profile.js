@@ -12,8 +12,7 @@ function Profile () {
     async function loadUsers() {
         try{
         console.log("Loading Users...")
-        let user="5fc54d7abf66159da8a3e15b"
-        const result = await API.getUsers(user)
+        const result = await API.getUsers(localStorage.userId)
         setUsers(result.data)
         console.log("USER LOG",result.data)
         console.log("USER LOG",users)
