@@ -17,7 +17,11 @@ const API = {
       console.log("ADD USER API: ", body)
     return axios.post("/api/users/register", body);
   },
-  
+  addPet: function(body) {
+    console.log("ADD USER API: ", body)
+  return axios.post("/api/pet", body);
+},
+
 
 
 };

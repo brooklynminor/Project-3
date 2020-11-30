@@ -30,7 +30,7 @@ class SignUpForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        API.addUser({emailAddress: this.state.emailAddress,
+        API.add({emailAddress: this.state.emailAddress,
         userPassword: this.state.userPassword,
         phoneNumber: this.state.phoneNumber,
         emergencyNo: this.state.phoneNumber,
