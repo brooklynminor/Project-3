@@ -6,12 +6,11 @@ const User = require("../models/userDetail.js");
 const orm = require("../db/orm")
 
 router.post("/api/users/register", async (req, res) => {
-  console.log(req)
+  // console.log(req)
   let userData = {
-    firstName:     req.body.firstName,
-    lastName:      req.body.lastName,
-    phoneNumber:   req.body.phoneNumber,
-    emergencyNo:   req.body.emergencyNo,
+    fullName:     req.body.fullName,
+    phoneNumber:   (req.body.phoneNumber),
+    emergencyNo:   (req.body.emergencyNo),
     emailAddress:  req.body.emailAddress,
     userPassword:  req.body.userPassword
 };
@@ -39,7 +38,7 @@ res.send( { status: true, message: `You are registered (userId: #${newUser._id})
 
 router.get("/api/users/search/:firstName", async (req, res) => {
   try {
-    const result = await User.findOne({firstName: req.params.firstName});
+    const result = await User.findOne({firstName: req.params.fullName});
     console.log("USER SEARCH RESULTS: ", result)
     res.send(result);
   } catch (err) {

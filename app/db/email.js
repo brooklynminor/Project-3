@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 // const petHotelPicture = require("../assets/petHotel.jpg");
 // async..await is not allowed in global scope, must use a wrapper
 async function email(userInfo) {
-    console.log("inside email.js: ", userInfo.emailAddress)
+    // console.log("inside email.js: ", userInfo.emailAddress)
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
   let testAccount = await nodemailer.createTestAccount();
@@ -20,7 +20,7 @@ async function email(userInfo) {
   let info = await transporter.sendMail({
     from: '"Pet Hotel" <lhalvorson34@gmail.com>', // sender address
     to: userInfo.emailAddress, // list of receivers
-    subject: `Thank you ${userInfo.firstName} for choosing Pet Hotel!`, // Subject line
+    subject: `Thank you ${userInfo.fullName} for choosing Pet Hotel!`, // Subject line
     text: "You have successfully created your account with Pet hotel.", // plain text body
     html: `<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB">
     <head>
@@ -101,12 +101,12 @@ async function email(userInfo) {
     </body>
     </html>`, // html body
   });
-console.log("message info: ", info)
-  console.log("Message sent: %s", info.messageId);
+// console.log("message info: ", info)
+//   console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
   // Preview only available when sending through an Ethereal account
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+//   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
 
@@ -133,7 +133,7 @@ async function emailSchedule(scheduleInfo, userInfo) {
   let info = await transporter.sendMail({
     from: '"Pet Hotel" <lhalvorson34@gmail.com>', // sender address
     to: userInfo.emailAddress, // list of receivers
-    subject: `Thank you ${userInfo.firstName} for choosing Pet Hotel!`, // Subject line
+    subject: `Thank you ${userInfo.fullName} for choosing Pet Hotel!`, // Subject line
     text: `You have successfully booked a reservation for your pet ${scheduleInfo.petName}.`, // plain text body
     html: `<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB">
     <head>

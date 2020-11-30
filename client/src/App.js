@@ -8,7 +8,7 @@ function App() {
         <NavBar/>
       </header>
       <div className="footer fixed-bottom bg-dark text-center text-white">
-        @Project team name
+        @Decoding Java Drinkers
       </div>
     </div>
     

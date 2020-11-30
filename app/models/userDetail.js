@@ -3,25 +3,20 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userDetail = new Schema({
-  firstName: {
+  fullName: {
     type: String,
     trim: true,
     required: true,
-    
-  },
-  lastName: {
-    type: String,
-    trim: true,
-    required: true
-    
   },
   phoneNumber: {
-    type: Number,
+    type: String,
+    decimal: false,
     required: true
     
   },
   emergencyNo: {
-    type: Number,
+    type: String,
+    decimal: false,
     required: true
     
   },
