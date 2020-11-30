@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-
 class SignUpForm extends Component {
     constructor() {
         super();
@@ -10,7 +9,7 @@ class SignUpForm extends Component {
             email: '',
             password: '',
             name: '',
-            hasAgreed: false
+            Agreed: false
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -53,7 +52,7 @@ class SignUpForm extends Component {
 
               <div className="form-group">
                 <label className="form-group__CheckboxLabel">
-                    <input className="form-Checkbox" type="checkbox" name="Agreed" value={this.state.hasAgreed} onChange={this.handleChange} /> I agree all statements in <a href="" className="form-TermsLink">terms of service</a>
+                    <input className="form-checkbox" type="checkbox" name="Agreed" value={this.state.Agreed} onChange={this.handleChange} /> I agree all statements in <a href="" className="form-TermsLink">terms of service</a>
                 </label>
               </div>
 
