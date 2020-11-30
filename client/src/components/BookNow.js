@@ -1,8 +1,42 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component, useState } from 'react';
 import API from "../utils/API"
-import Calendar from "./Calendar"
+import "react-calendar/dist/Calendar.css";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { DateRangePicker } from "react-date-range";
+import { addDays } from "date-fns";
+import moment from 'moment';
+let startDate = ""
+let endDate = ""
+function Schedule() {
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 1),
+      key: "selection",
+    },
+  ]);
+
+  console.log(`[start Date]:`, state[0].startDate);
+  console.log(`[End Date]:`, state[0].endDate);
+  startDate = state[0].startDate
+  endDate = state[0].endDate
+  return (
+    <div className="container">
+      <DateRangePicker
+        onChange={(item) => setState([item.selection])}
+        showSelectionPreview={false}
+        moveRangeOnFirstSelection={true}
+        months={1}
+        ranges={state}
+        direction="horizontal"
+      />
+    </div>
+  );
+}
+
 class SignUpForm extends Component {
+
     constructor() {
         super();
 
@@ -13,6 +47,8 @@ class SignUpForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    
+    
 
     handleChange(e) {
         let target = e.target;
@@ -26,11 +62,12 @@ class SignUpForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log( "SCHEDULE DATA: ",startDate, endDate)
         API.addSchedule({
           petName: this.state.petName,
           ownerId:"5fc47f7e32d2ce756c5da8b7",
-          checkIn: "2020-11-30T06:53:32.200Z",
-          checkOut: "2020-11-30T06:53:32.200Z"})
+          checkIn: startDate,
+          checkOut: endDate})
         console.log('The form was submitted with the following data:');
         console.log("CALENDAR PROP: ");
     }
@@ -48,7 +85,7 @@ class SignUpForm extends Component {
                 What days will your pup be here?
               </div>
               <div className="form-group mt-3 mb-4">
-                <Calendar />
+              <Schedule/>
               </div>
 
               <div className="form-group">
