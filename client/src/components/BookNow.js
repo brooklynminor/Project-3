@@ -70,7 +70,15 @@ class SignUpForm extends Component {
           checkOut: endDate})
         API.updateUserSchedule(result.data._id)
         console.log('The form was submitted with the following data:');
+<<<<<<< HEAD
         console.log("CALENDAR PROP: ",result);
+=======
+<<<<<<< HEAD
+        console.log("CALENDAR PROP: ",Calendar);
+=======
+        console.log("CALENDAR PROP: ");
+>>>>>>> 06200198fb797c84cb8a8d740c4a72939c3e851d
+>>>>>>> 347038b92c8a4fb2c4dea20c14c3513b51dde06c
     }
 
     render() {
@@ -86,7 +94,11 @@ class SignUpForm extends Component {
                 What days will your pup be here?
               </div>
               <div className="form-group mt-3 mb-4">
+<<<<<<< HEAD
+                <Calendar/>
+=======
               <Schedule/>
+>>>>>>> 06200198fb797c84cb8a8d740c4a72939c3e851d
               </div>
 
               <div className="form-group">
