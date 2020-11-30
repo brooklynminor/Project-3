@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Calendar from "./Calendar";
 import BookNow from "./BookNow";
-import SignIn from "./SignIn";
+import SignIn from "./signin";
 import SignUp from "./SignUp";
 // import Schedule from "./views/Schedule";
 import Profile from "../views/Profile";

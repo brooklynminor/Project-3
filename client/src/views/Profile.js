@@ -21,25 +21,50 @@ function Profile () {
       };
       console.log("USER LOG",users)
     return (
-        <div>
-            <ul>
-                <li>
-                    First Name : {users.firstName}
+        <div className='container container-sm-float'>
+            <div className='display-4 mb-3'>
+                {users.firstName} {users.lastName}'s Profile
+            </div>
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item">
+                    <div className='float-left'>
+                    First Name : 
+                    </div>
+                    <div className='float-right'>
+                        {users.firstName}
+                    </div>
                 </li>
-                <li>
-                    Last Name : {users.lastName}
+                <li className="list-group-item">
+                    <div className='float-left'>
+                    Last Name : 
+                    </div>
+                    <div className='float-right'>
+                        {users.lastName}
+                    </div>
                 </li>
-                <li>
-                    Phone Number : {users.phoneNumber}
+                <li className="list-group-item">
+                    <div className='float-left'>
+                    Phone Number : 
+                    </div>
+                    <div className='float-right'>
+                        {users.phoneNumber}
+                    </div>
                 </li>
-                <li>
-                    Emergency Phone Number : {users.emergencyNo}
+                <li className="list-group-item">
+                    <div className='float-left'>
+                    Email : 
+                    </div>
+                    <div className='float-right'>
+                        {users.emailAddress}
+                    </div>
                 </li>
-                <li>
-                    Email Address : {users.emailAddress}
-                </li>
-                <li>
-                    User Id : {users._id}
+                <li className="list-group-item">
+                    <div className='float-left'>
+                    User Id : 
+                    </div>
+                    <div className='float-right'>
+                        {users._id}
+                    </div>
                 </li>
 
 
