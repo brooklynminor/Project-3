@@ -1,58 +1,71 @@
-import React, {useState} from "react";
+import React, {Component} from "react";
+import API from "../utils/API"
+import { Link } from 'react-router-dom';
 
-function SubmitForm() {
-  const [ item, setItem ]= useState({})
+class RegisterPet extends Component {
+  constructor() {
+      super();
 
-  function handleInputChange( event ){
-    const { name, value }= event.target
-    setItem( { ...item, [name]: value } )
+      this.state = {
+          ownerId: '',
+          petName: '',
+          breed: '',
+          size: '',
+          note: ''
+      };
+
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  function handleInputSubmit( event ){
-    event.preventDefault()
-    // add your submit form code here
-    console.log(`submitting form: `, item)
+  handleChange(e) {
+      let target = e.target;
+      let value = target.value;
+      let name = target.name;
+
+      this.setState({
+        [name]: value
+      });
   }
-  
+
+  handleSubmit(e) {
+      e.preventDefault();
+      API.addPet({ownerId: "5fc4688f94cdef670880b842",
+      petName: this.state.petName,
+      breed: this.state.breed,
+      size: this.state.size,
+      note: this.state.note})
+      console.log('The form was submitted with the following data:');
+      console.log(this.state);
+  }
+  render() {
   return(
-  <div className="container-md">
-    <h2>Registration Form:</h2>
-    <form onSubmit={handleInputSubmit} method="post">
+    <div className="container-md  mt-5">
+      <div className="display-4 mb-3">Register Your Pet</div>
+    <form onSubmit={this.handleSubmit} className="form-group">
       <div className="form-group">
-        <label for="exampleFormControlTextarea1">Upload Image:</label>
-        <img href='#' name='image' onChange={handleInputChange} value={item.image} alt="..."/>
+        <label className="form-group__Label" htmlFor="name">Pets Name: </label>
+        <input type="text" id="petName" className="form-control" placeholder="Enter your full name" name="petName" value={this.state.petName} onChange={this.handleChange} />
       </div>
       <div className="form-group">
-        <label for="exampleFormControlInput1">Pet Name:</label>
-        <input type="text" onChange={handleInputChange} value={item.ownerName} name='ownername' className="form-control" id="exampleFormControlInput1" placeholder="Enter your name"/>
+        <label className="form-group__Label" htmlFor="phone">Breed: </label>
+        <input type="text" id="breed" className="form-control" placeholder="Enter your phone number" name="breed" value={this.state.breed} onChange={this.handleChange} />
+      </div>
+
+      <div className="form-group">
+        <label className="form-group__Label" htmlFor="password">Size: </label>
+        <input type="size" id="userPassword" className="form-control" placeholder="Enter your password" name="size" value={this.state.size} onChange={this.handleChange} />
       </div>
       <div className="form-group">
-        <label for="exampleFormControlInput1">User ID:</label>
-        <input type="text" onChange={handleInputChange} value={item.userId} name='userId' className="form-control" id="exampleFormControlInput1" placeholder="Enter your User ID"/>
+        <label className="form-group__Label" htmlFor="email">Special Requirements</label>
+        <textarea type="note" id="emailAddress" className="form-control" placeholder="Enter your email" name="note" value={this.state.note} onChange={this.handleChange} />
       </div>
       <div className="form-group">
-        <label for="exampleFormControlInput1">First Name:</label>
-        <input type="text" onChange={handleInputChange} value={item.firstName} name='firstname' className="form-control" id="email" placeholder="Enter your first name" required/>
+          <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Sign Up</button> <Link to="./SignIn.js" className="form-group__Link">I'm already member</Link>
       </div>
-      <div className="form-group">
-        <label for="exampleFormControlTextarea1">Last Name:</label>
-        <textarea type="text" onChange={handleInputChange} value={item.lastName} name='lastname' className="form-control" maxlength="6000" id="exampleFormControlTextarea1" placeholder="Enter your last name" rows="3" required></textarea>
-      </div>
-      <div className="form-group">
-        <label for="exampleFormControlInput1">Phone Number:</label>
-        <input type="text" name='phonenumber' onChange={handleInputChange} value={item.phoneNumber}  className="form-control" id="exampleFormControlInput1" placeholder="Enter your phone number"/>
-      </div>
-      <div className="form-group">
-        <label for="exampleFormControlInput1">Email Address:</label>
-        <input type="text" name='email' onChange={handleInputChange} value={item.email} className="form-control" id="email" placeholder="Enter your email" required/>
-      </div>
-      <div className="form-group">
-        <label for="exampleFormControlTextarea1">Home Address:</label>
-        <textarea type="text" name='adress' onChange={handleInputChange} value={item.address} className="form-control" maxlength="6000" id="exampleFormControlTextarea1" placeholder="Enter your home address" rows="3" required></textarea>
-      </div>
-      <button type="submit" value="send" style={{backgroundColor: "#a0bbad", borderColor:"#a0bbad"}} className="btn btn-primary">Save</button>
     </form>
   </div>
-  );
+);
 }
-export default SubmitForm;
+}
+export default RegisterPet;

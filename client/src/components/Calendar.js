@@ -22,7 +22,8 @@ function Schedule() {
     <div className="container">
       <DateRangePicker
         onChange={(item) => setState([item.selection])}
-        showSelectionPreview={true}
+        showSelectionPreview={false}
+        value={this.state.startDate}
         moveRangeOnFirstSelection={true}
         months={1}
         ranges={state}

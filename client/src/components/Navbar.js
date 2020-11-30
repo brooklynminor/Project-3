@@ -12,35 +12,40 @@ import SignUp from "./SignUp";
 // import Schedule from "./views/Schedule";
 import Profile from "../views/Profile";
 import RegisterPet from "../views/RegisterPet";
-import AboutUs from "../views/AboutUs";
+import Slider from "../components/Slider";
 
 
 function Navbar() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light row">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark row">
                 <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className='navbar-nav ml-3'>
+                    <ul className='navbar-nav ml-3 mr-5'>
                         <li className="nav-item active">
                             <Link className="navbar-brand" to="/">Pet Hotel</Link>
                         </li>
                         <li className="nav-item active">
-                            <Link className="navbar-brand" to="/BookNow">Book Now</Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/profile">Profile</Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/register">Register Pet</Link>
+                            <Link className="nav-link" to="/BookNow">Book Now</Link>
                         </li>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
                     </ul>
-                    <ul className='navbar-nav ml-3 float-right'>
+                    <div class="dropdown col justify-content-end text-right">
+                      <button class="btn btn-secondary dropdown-toggle justify-content-end text-right" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignIn">Sign-In</Link></button>
+                        <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignUp">Sign-Up</Link></button>
+                        <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/register">Register Pet</Link></button>
+                        <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/profile">Profile</Link></button>
+                      </div>
+                    </div>
+                    {/* <ul className='navbar-nav ml-3 float-right'>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/SignIn">Sign-In</Link>
                         </li>
@@ -48,7 +53,7 @@ function Navbar() {
                             <Link className="nav-link" to="/SignUp">Sign-Up</Link>
                         </li>
 
-                    </ul>
+                    </ul> */}
                 </div>
             </nav>
             <Switch>
@@ -73,7 +78,7 @@ function Navbar() {
                 </Route>
 
                 <Route path="/">
-                    <AboutUs />
+                    <Slider />
                 </Route>
 
 

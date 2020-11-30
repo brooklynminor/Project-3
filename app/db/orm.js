@@ -50,11 +50,11 @@ async function loginUser( email, password ) {
     console.log( ' .. yah! password is valid, let\'s login!');
     const userData = {
         userId:         result._id,
-        firstName:      result.firstName,
-        lastName:       result.lastName,
+        fullName:      result.fullName,
         phoneNumber:    result.phoneNumber,
         emergencyNo:    result.emergencyNo,
         emailAddress:   result.emailAddress,
+        _id: result._id,
         createdAt:      ''
     };
     console.log( '[loginUser] complete, returning with userData' );

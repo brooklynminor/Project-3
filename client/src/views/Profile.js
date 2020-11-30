@@ -1,37 +1,38 @@
 import React, {useState, useEffect} from "react";
 import API from "../utils/API"
-import moment from 'moment';
 
 function Profile () {
 
     const [users, setUsers] = useState([])
     const [pets, setPets] = useState([])
     const [schedule, setSchedule] = useState([])
-
     useEffect(() => {
         loadUsers()
       },[])
 
 
-    function loadUsers() {
+    async function loadUsers() {
         console.log("Loading Users...")
-        let user="Levi"
-        API.getUsers(user)
+        let user="5fc47f7e32d2ce756c5da8b7"
+        await API.getUsers(user)
           .then(async function(res){
             await setUsers(res.data)
-            loadPets()
+            console.log("USER LOG",res.data)
+          })
+          .then(async function(){
+            await loadPets()
             // console.log("USER LOG",users)
           })
           .catch(err => console.log(err))
       };
 
       function loadPets(){
-        console.log("Loading Pets...")
-        let user="Levi"
-        API.getPet(user)
+        console.log("Loading Pets...", users._id)
+        
+        API.getPet(users._id)
           .then(async function(res){
             await setPets(res.data)
-            // console.log("Pets LOG",pets)
+            console.log("Pets LOG",users)
             loadSchedule()
           })
           .catch(err => console.log(err))
@@ -52,25 +53,9 @@ function Profile () {
     return (
         <div className='container container-sm-float'>
             <div className='display-4 mb-3'>
-                {users.firstName} {users.lastName}'s Profile
+                {users.fullName}'s Profile
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item">
-                    <div className='float-left'>
-                    First Name : 
-                    </div>
-                    <div className='float-right'>
-                        {users.firstName}
-                    </div>
-                </li>
-                <li className="list-group-item">
-                    <div className='float-left'>
-                    Last Name : 
-                    </div>
-                    <div className='float-right'>
-                        {users.lastName}
-                    </div>
-                </li>
                 <li className="list-group-item">
                     <div className='float-left'>
                     Phone Number : 

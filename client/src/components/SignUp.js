@@ -7,10 +7,12 @@ class SignUpForm extends Component {
         super();
 
         this.state = {
+
             emailAddress: '',
             userPassword: '',
             phoneNumber: '',
             fullName: '',
+
             Agreed: false
         };
 
@@ -42,6 +44,7 @@ class SignUpForm extends Component {
     render() {
         return (
         <div className="container-md  mt-5">
+          <div className='display-5 mb-3'>Sign-Up</div>
             <form onSubmit={this.handleSubmit} className="form-group">
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="name">Full Name</label>
@@ -63,7 +66,9 @@ class SignUpForm extends Component {
 
               <div className="form-group">
                 <label className="form-group__CheckboxLabel">
+
                     <input className="form-Checkbox" type="checkbox" name="Agreed" value={this.state.Agreed} onChange={this.handleChange} /> I agree all statements in <a href="" className="form-TermsLink">terms of service</a>
+
                 </label>
               </div>
 
