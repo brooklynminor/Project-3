@@ -27,7 +27,7 @@ const API = {
         const result = await axios.get('/api/users/login', {
             params: {
                 emailAddress: body.emailAddress,
-                userPassword: body.userPassowrd
+                userPassword: body.userPassword
             }
         })
         console.log("LOGIN GET RESULT:",result)

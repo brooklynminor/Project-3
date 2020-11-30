@@ -47,7 +47,7 @@ router.get("/api/users/search/:firstName", async (req, res) => {
 });
 
 router.get("/api/users/login", async (req, res) => {
-  console.log("IN LOGIN USERS: ",req)
+  console.log("IN LOGIN USERS: ",req.query)
   const email = req.query.emailAddress;
   const password = req.query.userPassword;
   console.log(email, password)
