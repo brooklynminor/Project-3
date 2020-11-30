@@ -28,13 +28,15 @@ class RegisterPet extends Component {
       });
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
       e.preventDefault();
-      API.addPet({ownerId: "5fc4688f94cdef670880b842",
+      const result = await API.addPet({ownerId: "5fc4688f94cdef670880b842",
       petName: this.state.petName,
       breed: this.state.breed,
       size: this.state.size,
       note: this.state.note})
+      console.log("ADD PET RESULT: ", result)
+      await API.updateUser(result.data._id)
       console.log('The form was submitted with the following data:');
       console.log(this.state);
   }
@@ -61,7 +63,7 @@ class RegisterPet extends Component {
         <textarea type="note" id="emailAddress" className="form-control" placeholder="Enter your email" name="note" value={this.state.note} onChange={this.handleChange} />
       </div>
       <div className="form-group">
-          <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Sign Up</button> <Link to="./SignIn.js" className="form-group__Link">I'm already member</Link>
+          <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button>
       </div>
     </form>
   </div>
