@@ -32,11 +32,11 @@ class SignUpForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        API.addUser({emailAddress: this.state.emailAddress,
-        userPassword: this.state.userPassword,
-        phoneNumber: this.state.phoneNumber,
-        emergencyNo: this.state.phoneNumber,
-        fullName: this.state.fullName})
+        API.addUser({
+          petName: this.state.petName,
+          ownerId:"placeholder",
+          checkIn:"Placeholder",
+          checkOut: "Placeholder"})
         console.log('The form was submitted with the following data:');
         console.log(this.state);
     }
