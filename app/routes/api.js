@@ -36,9 +36,10 @@ email.email(newUser)
 res.send( { status: true, message: `You are registered (userId: #${newUser._id})!` } );
 });
 
-router.get("/api/users/search/:firstName", async (req, res) => {
+router.get("/api/users/search/:_id", async (req, res) => {
   try {
-    const result = await User.findOne({firstName: req.params.fullName});
+    console.log(req.params._id)
+    const result = await User.findOne({_id: req.params._id});
     console.log("USER SEARCH RESULTS: ", result)
     res.send(result);
   } catch (err) {
@@ -104,11 +105,12 @@ router.post("/api/pet", async ({ body }, res) => {
   }
 });
 
-router.get("/api/pet/:ownerId", async (req, res) => {
-  const ownName = req.params.ownerId;
+router.get("/api/pet/search/:ownerId", async (req, res) => {
+  const ownName = req.params;
   console.log("search pets api",ownName);
   try {
     const result = await Pet.findOne({ ownerId: ownName });
+    console.log("PETS SEARCH RESULT: ",result)
     res.send(result);
   } catch (err) {
     res.status(400).json(err.message);

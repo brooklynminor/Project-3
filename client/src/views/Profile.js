@@ -6,19 +6,21 @@ function Profile () {
     const [users, setUsers] = useState([])
     const [pets, setPets] = useState([])
     const [schedule, setSchedule] = useState([])
-
     useEffect(() => {
         loadUsers()
       },[])
 
 
-    function loadUsers() {
+    async function loadUsers() {
         console.log("Loading Users...")
-        let user="Levi"
-        API.getUsers(user)
+        let user="5fc47f7e32d2ce756c5da8b7"
+        await API.getUsers(user)
           .then(async function(res){
             await setUsers(res.data)
-            loadPets()
+            console.log("USER LOG",res.data)
+          })
+          .then(async function(){
+            await loadPets()
             // console.log("USER LOG",users)
           })
           .catch(err => console.log(err))
@@ -30,7 +32,7 @@ function Profile () {
         API.getPet(users._id)
           .then(async function(res){
             await setPets(res.data)
-            // console.log("Pets LOG",pets)
+            console.log("Pets LOG",users)
             loadSchedule()
           })
           .catch(err => console.log(err))

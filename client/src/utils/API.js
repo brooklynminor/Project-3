@@ -2,8 +2,8 @@ import axios from "axios";
 
 const API = {
   // Gets all books
-    getUsers: function(name) {
-        return axios.get("/api/users/search/" + name);
+    getUsers: function(id) {
+        return axios.get("/api/users/search/" + id);
     },
     // Gets the book with the given id
     getSchedule: function(id) {
@@ -12,7 +12,7 @@ const API = {
     // Deletes the book with the given id
     getPet: function(name) {
         console.log("getpet: ", name)
-        return axios.get("/api/pet/" + name);
+        return axios.get("/api/pet/search/" + name);
     },
     addUser: function(body) {
         console.log("ADD USER API: ", body)
@@ -30,7 +30,11 @@ const API = {
                 userPassword: body.userPassword
             }
         })
-        console.log("LOGIN GET RESULT:",result)
+        if(result.data.status){
+            return true
+        } else {
+            return false
+        }
     }
 }
 export default API

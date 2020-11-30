@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Card } from 'react-bootstrap'
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+import { Card } from 'react-bootstrap'
 import API from "../utils/API"
+import SignUp from "./SignUp"
+import Profile from "../views/Profile"
+
+
 
 class SignInForm extends Component {
     constructor() {
@@ -27,16 +36,21 @@ class SignInForm extends Component {
         });
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
-        API.loginUser({emailAddress: this.state.emailAddress,
+        const result = await API.loginUser({emailAddress: this.state.emailAddress,
         userPassword: this.state.userPassword})
-        console.log('The form was submitted with the following data:');
-        console.log(this.state);
+        console.log("In signin result:",result)
+        if (result){
+          
+        }
+        // console.log('The form was submitted with the following data:');
+        // console.log(this.state);
     }
 
     render() {
         return (
+          <Router>
           <div class="row justify-content-center">  
       <div class="col-md-6">&nbsp;</div>
         <div class="col-md-6">
@@ -56,7 +70,7 @@ class SignInForm extends Component {
                 <input type="password" id="userPassword" className="form-control" placeholder="Enter your password" name="userPassword" value={this.state.userPassword} onChange={this.handleChange} />
               </div>
               <div className="form-group">
-                    <Link to="./SignUp.js" className="form-group__Link">Register</Link>
+                    <Link to="./SignUp" className="form-group__Link">Register</Link>
               </div>
             </form>            
           </Card.Body>
@@ -64,9 +78,19 @@ class SignInForm extends Component {
           </div>
         </div>
         </div>
-        
+        <Switch>
+                <Route path="/profile">
+                    <Profile />
+                </Route>
+                <Route path="/SignUp">
+                    <SignUp />
+                </Route>
+
+            </Switch>
+
+        </Router>
         );
     }
 }
 
-export default SignInForm;
+export default SignInForm; 
