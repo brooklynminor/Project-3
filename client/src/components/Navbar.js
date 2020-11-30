@@ -37,7 +37,7 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className='navbar-nav ml-3 mr-5'>
                         <li className="nav-item active">
-                            <Link className="navbar-brand" to="/">Pet Hotel</Link>
+                            <Link className="navbar-brand" to="/">Creature Comfort</Link>
                         </li>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/BookNow">Book Now</Link>

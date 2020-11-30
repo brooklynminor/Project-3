@@ -40,20 +40,17 @@ class RegisterPet extends Component {
   }
   render() {
   return(
-    <div className="container mt-3">
-      <div className="row">
-          <div className="col col-md-12 col-xl-10 col-lg-8 col-sm-6">
-
-              <div className="display-4 mb-3">Register Your Pet</div>
-            <form onSubmit={this.handleSubmit} className="form-group">
-              <div className="form-group">
-                <label className="form-group__Label" htmlFor="name">Pets Name: </label>
-                <input type="text" id="petName" className="form-control" placeholder="Enter your full name" name="petName" value={this.state.petName} onChange={this.handleChange} />
-              </div>
-              <div className="form-group">
-                <label className="form-group__Label" htmlFor="phone">Breed: </label>
-                <input type="text" id="breed" className="form-control" placeholder="Enter your phone number" name="breed" value={this.state.breed} onChange={this.handleChange} />
-              </div>
+    <div className="container-md mt-5" style={{ width: "60%"}}>
+      <div className="display-4 mb-3 text-centre" style={{fontFamily: 'Oswald', color: "#ffce00", textAlign: 'center',}}>Register Your Pet</div>
+    <form onSubmit={this.handleSubmit} className="form-group" style={{marginTop: "50px"}}>
+      <div className="form-group">
+        <label className="form-group__Label" htmlFor="name">Pets Name: </label>
+        <input type="text" className="form-control" placeholder="Enter pets name..." name="petName" value={this.state.petName} onChange={this.handleChange} />
+      </div>
+      <div className="form-group">
+        <label className="form-group__Label" htmlFor="phone">Breed: </label>
+        <input type="text" id="breed" className="form-control" placeholder="Enter breed of pet..." name="breed" value={this.state.breed} onChange={this.handleChange} />
+      </div>
 
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="password">Size: </label>
@@ -66,10 +63,20 @@ class RegisterPet extends Component {
               <div className="form-group">
                   <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button> 
               </div>
-            </form>
-            </div>
+      <div className="form-group">
+        <label className="form-group__Label" htmlFor="password">Size: </label>
+        <input type="size" className="form-control" placeholder="Enter size of pet..." name="size" value={this.state.size} onChange={this.handleChange} />
       </div>
-  </div>
+      <div className="form-group">
+        <label className="form-group__Label" htmlFor="email">Special Requirements: </label>
+        <textarea type="note" className="form-control" placeholder="Enter any medical/special attention required..." name="note" value={this.state.note} onChange={this.handleChange} />
+      </div>
+      <div className="form-group">
+          <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button>
+      </div>
+      </form>
+      </div>
+      
 );
 }
 }
