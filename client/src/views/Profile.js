@@ -12,18 +12,17 @@ function Profile () {
 
 
     async function loadUsers() {
+        try{
         console.log("Loading Users...")
-        let user="5fc47f7e32d2ce756c5da8b7"
-        await API.getUsers(user)
-          .then(async function(res){
-            await setUsers(res.data)
-            console.log("USER LOG",res.data)
-          })
-          .then(async function(){
-            await loadPets()
+        let user="5fc51d234487360ce8488c4c"
+        const result = await API.getUsers(user)
+        await setUsers(result.data)
+        console.log("USER LOG",result.data)
+        loadPets()
             // console.log("USER LOG",users)
-          })
-          .catch(err => console.log(err))
+        } catch (error){
+            console.error(error.message)
+        }
       };
 
       function loadPets(){
@@ -51,7 +50,7 @@ function Profile () {
     //   console.log("Schedule LOG",schedule)
 
     return (
-        <div className='container container-sm-float'>
+        <div className='container'>
             <div className='display-4 mb-3'>
                 {users.fullName}'s Profile
             </div>
