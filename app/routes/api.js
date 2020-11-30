@@ -47,15 +47,15 @@ router.get("/api/users/search/:firstName", async (req, res) => {
 });
 
 router.get("/api/users/login", async (req, res) => {
-  const email = req.body.emailAddress;
-  const password = req.body.userPassword;
+  console.log("IN LOGIN USERS: ",req)
+  const email = req.query.emailAddress;
+  const password = req.query.userPassword;
   console.log(email, password)
   const userData = await orm.loginUser(email, password);
   console.log( '[/api/user/login] userData: ', userData);
   if( !userData ){
       return res.send( { status: false, message: 'Sorry unknown user or wrong password' } );
   }
-
   console.log('* valid password, proceeding with sending userData to client!', userData);
   res.send({ status: true, ...userData });
 });
@@ -97,18 +97,18 @@ router.post("/api/pet", async ({ body }, res) => {
   const petObj = new Pet(body);
   try {
     const result = await petObj.save();
-    console.log(result);
+    console.log("get api pet: ",result);
     res.send(result);
   } catch (err) {
     res.status(400).json(err.message);
   }
 });
 
-router.get("/api/pet/:ownerName", async (req, res) => {
-  const ownName = req.params.ownerName;
-  console.log(ownName);
+router.get("/api/pet/:ownerId", async (req, res) => {
+  const ownName = req.params.ownerId;
+  console.log("search pets api",ownName);
   try {
-    const result = await Pet.findOne({ ownerName: ownName });
+    const result = await Pet.findOne({ ownerId: ownName });
     res.send(result);
   } catch (err) {
     res.status(400).json(err.message);

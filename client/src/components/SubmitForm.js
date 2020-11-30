@@ -30,7 +30,7 @@ class RegisterPet extends Component {
 
   handleSubmit(e) {
       e.preventDefault();
-      API.addPet({ownerId: "5fc45aa8750ac1a260602633",
+      API.addPet({ownerId: "5fc4688f94cdef670880b842",
       petName: this.state.petName,
       breed: this.state.breed,
       size: this.state.size,
@@ -41,7 +41,7 @@ class RegisterPet extends Component {
   render() {
   return(
     <div className="container-md  mt-5">
-      <div className="display-4">Register Your Pet</div>
+      <div className="display-4 mb-3">Register Your Pet</div>
     <form onSubmit={this.handleSubmit} className="form-group">
       <div className="form-group">
         <label className="form-group__Label" htmlFor="name">Pets Name: </label>

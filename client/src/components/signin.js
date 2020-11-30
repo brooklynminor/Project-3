@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Form } from 'react-bootstrap'
+import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+import API from "../utils/API"
 
 class Login extends Component {
 
@@ -7,8 +9,8 @@ constructor(){
   super();
 
         this.state = {
-            email: '',
-            password: '',
+            emailAddress: '',
+            userPassword: '',
                       
         };
 
@@ -29,9 +31,9 @@ constructor(){
 
     handleSubmit(e) {
       e.preventDefault();
-
-      console.log('The form was submitted with the following data:');
-      console.log(this.state);
+      API.loginUser({emailAddress: this.state.emailAddress,
+        userPassword: this.state.userPassword,
+        })
   }
 
   render(){
@@ -45,13 +47,19 @@ constructor(){
             <Card.Title>
               Welcome to PET HOTEL
             </Card.Title>
-            <Form>
-              <Form.Control type="email" id="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="ID : Email"/>
-              <Form.Control type="password" id="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Password" style={{marginTop:10}}/>
-              <Form.Text class="fs-6 text-muted">
-                {/* If you don't have ID yet, Please join us<a href="#"> Now.</a>  */}
-              </Form.Text>
-            </Form>
+            <form onSubmit={this.handleSubmit} className="form-group">
+              <div className="form-group">
+                <label className="form-group__Label" htmlFor="name">Email Address</label>
+                <input type="text" id="emailAddress" className="form-control" placeholder="Enter your email" name="emailAddress" value={this.state.emailAddress} onChange={this.handleChange} />
+              </div>
+              <div className="form-group">
+                <label className="form-group__Label" htmlFor="phone">Password</label>
+                <input type="text" id="userPassword" className="form-control" placeholder="Enter your password" name="userPassword" value={this.state.userPassword} onChange={this.handleChange} />
+              </div>
+              <div className="form-group">
+                  <Link to="./SignUp" className="form-group__Link">Register</Link>
+              </div>
+            </form>
             
 
             </Card.Body>
