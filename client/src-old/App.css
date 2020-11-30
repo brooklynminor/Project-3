@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+header a{
+ text-decoration: none;
+ color: white;
+}
+
+.App-body{
+ color: #282c34;
+ min-height: 80vh;
+ font-size: 50px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ background-image: url(https://royailekennel.com/wp-content/uploads/2015/06/background-paws-texture-blue.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+ padding: 20px;
+}
+
+.card{
+  max-width: 900px;
+}
+
+.App-footer{
+  background-color: #282c34;
+  color: white;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
