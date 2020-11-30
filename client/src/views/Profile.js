@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import API from "../utils/API"
-import moment from 'moment';
 
 function Profile () {
 
@@ -26,9 +25,9 @@ function Profile () {
       };
 
       function loadPets(){
-        console.log("Loading Pets...")
-        let user="Levi"
-        API.getPet(user)
+        console.log("Loading Pets...", users._id)
+        
+        API.getPet(users._id)
           .then(async function(res){
             await setPets(res.data)
             // console.log("Pets LOG",pets)
@@ -52,25 +51,9 @@ function Profile () {
     return (
         <div className='container container-sm-float'>
             <div className='display-4 mb-3'>
-                {users.firstName} {users.lastName}'s Profile
+                {users.fullName}'s Profile
             </div>
             <ul className="list-group list-group-flush">
-                <li className="list-group-item">
-                    <div className='float-left'>
-                    First Name : 
-                    </div>
-                    <div className='float-right'>
-                        {users.firstName}
-                    </div>
-                </li>
-                <li className="list-group-item">
-                    <div className='float-left'>
-                    Last Name : 
-                    </div>
-                    <div className='float-right'>
-                        {users.lastName}
-                    </div>
-                </li>
                 <li className="list-group-item">
                     <div className='float-left'>
                     Phone Number : 

@@ -44,6 +44,7 @@ class SignUpForm extends Component {
     render() {
         return (
         <div className="container-md  mt-5">
+          <div className='display-5 mb-3'>Sign-Up</div>
             <form onSubmit={this.handleSubmit} className="form-group">
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="name">Full Name</label>

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const scheduleSchema = new Schema({
-  ownerName: {
+  ownerId: {
     type: String,
     trim: true,
     required: "Enter the owners name."
