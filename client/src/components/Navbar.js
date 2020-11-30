@@ -23,11 +23,11 @@ function Navbar() {
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className='navbar-nav ml-3'>
+                    <ul className='navbar-nav ml-3 mr-5'>
                         <li className="nav-item active">
                             <Link className="navbar-brand" to="/">Pet Hotel</Link>
                         </li>
-                        <li className="nav-item active ml-5">
+                        <li className="nav-item active">
                             <Link className="nav-link" to="/BookNow">Book Now</Link>
                         </li>
                         <li className="nav-item active">
