@@ -12,18 +12,17 @@ function Profile () {
 
 
     async function loadUsers() {
+        try{
         console.log("Loading Users...")
-        let user="5fc47f7e32d2ce756c5da8b7"
-        await API.getUsers(user)
-          .then(async function(res){
-            await setUsers(res.data)
-            console.log("USER LOG",res.data)
-          })
-          .then(async function(){
-            await loadPets()
+        let user="5fc51d234487360ce8488c4c"
+        const result = await API.getUsers(user)
+        await setUsers(result.data)
+        console.log("USER LOG",result.data)
+        loadPets()
             // console.log("USER LOG",users)
-          })
-          .catch(err => console.log(err))
+        } catch (error){
+            console.error(error.message)
+        }
       };
 
       function loadPets(){
@@ -51,12 +50,34 @@ function Profile () {
     //   console.log("Schedule LOG",schedule)
 
     return (
+<<<<<<< HEAD
         // User Detail starts
         <div className="container">
             <div className="row">
                 <div className="col col-xl-8 col-lg-6">
                     <div className='display-6 mb-1'>
                         {users.fullName}'s Profile
+=======
+        <div className='container'>
+            <div className='display-4 mb-3'>
+                {users.fullName}'s Profile
+            </div>
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item">
+                    <div className='float-left'>
+                    Phone Number : 
+                    </div>
+                    <div className='float-right'>
+                        {users.phoneNumber}
+                    </div>
+                </li>
+                <li className="list-group-item">
+                    <div className='float-left'>
+                    Email : 
+                    </div>
+                    <div className='float-right'>
+                        {users.emailAddress}
+>>>>>>> 06200198fb797c84cb8a8d740c4a72939c3e851d
                     </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">

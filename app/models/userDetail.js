@@ -27,7 +27,11 @@ const userDetail = new Schema({
   userPassword: {
     type: String,
     required:true
-  }
+  },
+  pets: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Pets"
+  }]
 
 });
 

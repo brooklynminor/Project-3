@@ -19,7 +19,7 @@ const API = {
         return axios.post("/api/users/register", body);
     },
     addPet: function(body) {
-        console.log("ADD USER API: ", body)
+        console.log("ADD PET API: ", body)
     return axios.post("/api/pet", body);
     },
     loginUser: async function(body) {
@@ -40,6 +40,11 @@ const API = {
         console.log("ADD SCHEDULE API: ", body)
     return axios.post("/api/schedule", body);
     },
+    updateUser: function(body) {
+        console.log("UPDATE USERS: ", body)
+    return axios.post("/api/users/update/" + body);
+    },
+
 
 }
 export default API

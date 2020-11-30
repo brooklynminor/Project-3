@@ -61,6 +61,14 @@ router.get("/api/users/login", async (req, res) => {
   res.send({ status: true, ...userData });
 });
 
+router.post("api/users/update/:id", async (req, res) => {
+  console.log("IN LOGIN USERS: ",req.query)
+  const petId = req.query.petId;
+  const result = await User.update({_id:"5fc51d234487360ce8488c4c"},{pets: petId})
+  console.log("IN UPDATE USERS API: ", ownerId)
+  res.send(result);
+});
+
 router.post("/api/schedule", async ({ body }, res) => {
   const schedule = new Schedule(body);
   const result = await schedule.save();
