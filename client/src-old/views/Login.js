@@ -1,9 +1,9 @@
 import React from 'react';
+// import Card from "./components/Card";
+// import LoginForm from "./components/LoginForm";
 import { Button, Card, Form } from 'react-bootstrap'
 
-function Login(){
-  return(
-    <>
+
       <div class="row">  
       <div class="col-md-6">&nbsp;</div>
         <div class="col-md-6">
@@ -17,7 +17,7 @@ function Login(){
               <Form.Control type="email" placeholder="ID : Email"/>
               <Form.Control type="password" placeholder="Password" style={{marginTop:10}}/>
               <Form.Text class="fs-6 text-muted">
-                {/* If you don't have ID yet, Please join us<a href="#"> Now.</a>  */}
+                If you don't have ID yet, Please join us<a href="#"> Now.</a> 
               </Form.Text>
             </Form>
             
@@ -26,9 +26,6 @@ function Login(){
           </div>
         </div>
         </div>
-        </>
-  )
-}
 
 export default Login
       
