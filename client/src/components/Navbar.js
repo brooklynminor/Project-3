@@ -27,20 +27,25 @@ function Navbar() {
                         <li className="nav-item active">
                             <Link className="navbar-brand" to="/">Pet Hotel</Link>
                         </li>
-                        <li className="nav-item active">
-                            <Link className="navbar-brand" to="/BookNow">Book Now</Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/profile">Profile</Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/register">Register Pet</Link>
+                        <li className="nav-item active ml-5">
+                            <Link className="nav-link" to="/BookNow">Book Now</Link>
                         </li>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
                     </ul>
-                    <ul className='navbar-nav ml-3 float-right'>
+                    <div class="dropdown col justify-content-end text-right">
+                      <button class="btn btn-secondary dropdown-toggle justify-content-end text-right" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignIn">Sign-In</Link></button>
+                        <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignUp">Sign-Up</Link></button>
+                        <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/register">Register Pet</Link></button>
+                        <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/profile">Profile</Link></button>
+                      </div>
+                    </div>
+                    {/* <ul className='navbar-nav ml-3 float-right'>
                         <li className="nav-item active">
                             <Link className="nav-link" to="/SignIn">Sign-In</Link>
                         </li>
@@ -48,7 +53,7 @@ function Navbar() {
                             <Link className="nav-link" to="/SignUp">Sign-Up</Link>
                         </li>
 
-                    </ul>
+                    </ul> */}
                 </div>
             </nav>
             <Switch>
