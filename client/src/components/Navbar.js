@@ -12,7 +12,7 @@ import SignUp from "./SignUp";
 // import Schedule from "./views/Schedule";
 import Profile from "../views/Profile";
 import RegisterPet from "../views/RegisterPet";
-import AboutUs from "../views/AboutUs";
+// import Slider from "../components/Slider";
 
 
 function Navbar() {
@@ -72,9 +72,9 @@ function Navbar() {
                     <SignUp />
                 </Route>
 
-                <Route path="/">
-                    <AboutUs />
-                </Route>
+                {/* <Route path="/">
+                    <Slider />
+                </Route> */}
 
 
             </Switch>
