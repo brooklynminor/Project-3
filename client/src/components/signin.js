@@ -38,7 +38,7 @@ constructor(){
 
   render(){
     return(
-      <div class="row justify-content-center mt-4 mb-4">  
+      <div class="row justify-content-center mt-2 mb-5 h-100">  
         <div class="col-md-4">
 
           <div class="card">
@@ -57,14 +57,14 @@ constructor(){
                 <input type="text" id="userPassword" className="form-control" placeholder="Enter your password" name="userPassword" value={this.state.userPassword} onChange={this.handleChange} />
               </div>
               <div className="form-group">
-                  <Link to="./SignUp" className="form-group__Link">Register</Link>
+                  <Link to="./SignUp" className="form-group__Link mb-0">Register</Link>
               </div>
             </form>
             
 
             </Card.Body>
 
-            <button className="btn btn-primary" onClick={this.handleSubmit}>Login</button>
+            <button className="btn btn-primary mt-0" onClick={this.handleSubmit}>Login</button>
 
           </div>
         </div>
