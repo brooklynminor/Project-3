@@ -7,13 +7,7 @@ class SignUpForm extends Component {
         super();
 
         this.state = {
-
-            emailAddress: '',
-            userPassword: '',
-            phoneNumber: '',
-            fullName: '',
-
-            Agreed: false
+          petName: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,11 +26,11 @@ class SignUpForm extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        API.addUser({
+        API.addSchedule({
           petName: this.state.petName,
-          ownerId:"placeholder",
-          checkIn:"Placeholder",
-          checkOut: "Placeholder"})
+          ownerId:"5fc47f7e32d2ce756c5da8b7",
+          checkIn:"2020-11-30T06:53:32.200Z",
+          checkOut: "2020-11-30T06:53:32.200Z"})
         console.log('The form was submitted with the following data:');
         console.log(this.state);
     }

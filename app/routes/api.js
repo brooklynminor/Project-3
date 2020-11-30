@@ -63,10 +63,12 @@ router.get("/api/users/login", async (req, res) => {
 
 router.post("/api/schedule", async ({ body }, res) => {
   const schedule = new Schedule(body);
-  console.log(schedule);
-  const findUser = await User.findOne({firstName:body.ownerName})
+  const result = await schedule.save();
+
+  console.log("schedule result: ", result);
+  const findUser = await User.findOne({_id:body.ownerId})
   console.log("FIND USER: ", findUser)
-  email.emailSchedule(schedule, findUser)
+  email.emailSchedule(result, findUser)
   try {
     const result = await schedule.save(body);
     res.send(result);

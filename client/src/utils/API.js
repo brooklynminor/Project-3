@@ -35,6 +35,11 @@ const API = {
         } else {
             return false
         }
-    }
+    },
+    addSchedule: function(body) {
+        console.log("ADD SCHEDULE API: ", body)
+    return axios.post("/api/schedule", body);
+    },
+
 }
 export default API
