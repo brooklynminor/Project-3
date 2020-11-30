@@ -31,7 +31,12 @@ const userDetail = new Schema({
   pets: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Pets"
+  }],
+  schedule: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Schedule"
   }]
+
 
 });
 

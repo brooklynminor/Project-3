@@ -39,7 +39,7 @@ res.send( { status: true, message: `You are registered (userId: #${newUser._id})
 router.get("/api/users/search/:_id", async (req, res) => {
   try {
     console.log(req.params._id)
-    const result = await User.findOne({_id: req.params._id});
+    const result = await User.findOne({_id: req.params._id}).populate("pets").populate("schedule");
     console.log("USER SEARCH RESULTS: ", result)
     res.send(result);
   } catch (err) {
@@ -61,13 +61,27 @@ router.get("/api/users/login", async (req, res) => {
   res.send({ status: true, ...userData });
 });
 
-router.post("api/users/update/:id", async (req, res) => {
-  console.log("IN LOGIN USERS: ",req.query)
-  const petId = req.query.petId;
-  const result = await User.update({_id:"5fc51d234487360ce8488c4c"},{pets: petId})
-  console.log("IN UPDATE USERS API: ", ownerId)
+router.put("/api/users/update/:id", async (req, res) => {
+  console.log("IN UPDATE USERS: ", req.params);
+  const petId = req.params.id;
+  const result = await User.updateOne(
+    { _id: "5fc54d7abf66159da8a3e15b" },
+    { $push: { pets: petId } },
+    { new: true }
+  );
   res.send(result);
 });
+router.put("/api/users/changeSchedule/:id", async (req, res) => {
+  console.log("IN UPDATE USERS SCHEDULE: ", req.params);
+  const scheduleId = req.params.id;
+  const result = await User.updateOne(
+    { _id: "5fc54d7abf66159da8a3e15b" },
+    { $push: { schedule: scheduleId } },
+    { new: true }
+  );
+  res.send(result);
+});
+
 
 router.post("/api/schedule", async ({ body }, res) => {
   const schedule = new Schedule(body);

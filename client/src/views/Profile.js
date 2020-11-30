@@ -14,38 +14,39 @@ function Profile () {
     async function loadUsers() {
         try{
         console.log("Loading Users...")
-        let user="5fc51d234487360ce8488c4c"
+        let user="5fc54d7abf66159da8a3e15b"
         const result = await API.getUsers(user)
-        await setUsers(result.data)
+        setUsers(result.data)
         console.log("USER LOG",result.data)
-        loadPets()
+        console.log("USER LOG",users)
+
             // console.log("USER LOG",users)
         } catch (error){
             console.error(error.message)
         }
       };
 
-      function loadPets(){
-        console.log("Loading Pets...", users._id)
+    //   function loadPets(){
+    //     console.log("Loading Pets...", users._id)
         
-        API.getPet(users._id)
-          .then(async function(res){
-            await setPets(res.data)
-            console.log("Pets LOG",users)
-            loadSchedule()
-          })
-          .catch(err => console.log(err))
-      }
-      function loadSchedule(){
-        console.log("Loading Schedule...")
-        let user="Levi"
-        API.getSchedule(user)
-          .then(async function(res){
-            await setSchedule(res.data)
-            // console.log("Pets LOG",pets)
-          })
-          .catch(err => console.log(err))
-      }
+    //     API.getPet(users._id)
+    //       .then(async function(res){
+    //         await setPets(res.data)
+    //         console.log("Pets LOG",users)
+    //         loadSchedule()
+    //       })
+    //       .catch(err => console.log(err))
+    //   }
+    //   function loadSchedule(){
+    //     console.log("Loading Schedule...")
+    //     let user="Levi"
+    //     API.getSchedule(user)
+    //       .then(async function(res){
+    //         await setSchedule(res.data)
+    //         // console.log("Pets LOG",pets)
+    //       })
+    //       .catch(err => console.log(err))
+    //   }
 
     //   console.log("Schedule LOG",schedule)
 
@@ -83,13 +84,14 @@ function Profile () {
             <div className='display-4 mb-3 mt-3'>
                 Pets
             </div>
-            <ul className="list-group list-group-flush">
+            {users&&users.pets?users.pets.map(el=>{return(
+            <ul className="list-group list-group-flush mb-5">
             <li className="list-group-item">
                     <div className='float-left'>
                     Pet Name : 
                     </div>
                     <div className='float-right'>
-                        {pets.petName}
+                        {el.petName}
                     </div>
                 </li>
 
@@ -98,7 +100,7 @@ function Profile () {
                     Breed : 
                     </div>
                     <div className='float-right'>
-                        {pets.breed}
+                        {el.breed}
                     </div>
                 </li>
 
@@ -107,7 +109,7 @@ function Profile () {
                     Size : 
                     </div>
                     <div className='float-right'>
-                        {pets.size}
+                        {el.size}
                     </div>
                 </li>
                 <li className="list-group-item">
@@ -115,21 +117,24 @@ function Profile () {
                     Date Added : 
                     </div>
                     <div className='float-right'>
-                        {pets.date}
+                        {el.date}
                     </div>
                 </li>
             
-            </ul>
-            <div className='display-4 mb-3 mt-3'>
+            </ul>)}
+            ):""}
+            <div className='display-4 mb-3'>
                 Upcoming Bookings
                 </div >
+                {users&&users.schedule?users.schedule.map(el=>{return(
+
                     <ul className="list-group list-group-flush mb-5">
                     <li className="list-group-item">
                         <div className='float-left'>
                         Pet : 
                         </div>
                         <div className='float-right'>
-                            {schedule.petName}
+                            {el.petName}
                         </div>
                     </li>
                     <li className="list-group-item">
@@ -137,7 +142,7 @@ function Profile () {
                         Notes : 
                         </div>
                         <div className='float-right'>
-                            {schedule.note}
+                            {el.note}
                         </div>
                     </li>
                     <li className="list-group-item">
@@ -145,7 +150,7 @@ function Profile () {
                         Check-In : 
                         </div>
                         <div className='float-right'>
-                            {schedule.checkIn}
+                            {el.checkIn}
                         </div>
                     </li>
                     <li className="list-group-item">
@@ -153,10 +158,11 @@ function Profile () {
                         Check-Out : 
                         </div>
                         <div className='float-right'>
-                            {schedule.checkOut}
+                            {el.checkOut}
                         </div>
                     </li>
-                </ul>
+                </ul>)}
+            ):""}
         </div>
     )
 }

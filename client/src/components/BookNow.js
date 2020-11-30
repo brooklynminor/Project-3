@@ -60,16 +60,17 @@ class SignUpForm extends Component {
         });
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
         e.preventDefault();
         console.log( "SCHEDULE DATA: ",startDate, endDate)
-        API.addSchedule({
+        const result = await API.addSchedule({
           petName: this.state.petName,
-          ownerId:"5fc47f7e32d2ce756c5da8b7",
+          ownerId:"5fc54d7abf66159da8a3e15b",
           checkIn: startDate,
           checkOut: endDate})
+        API.updateUserSchedule(result.data._id)
         console.log('The form was submitted with the following data:');
-        console.log("CALENDAR PROP: ");
+        console.log("CALENDAR PROP: ",result);
     }
 
     render() {

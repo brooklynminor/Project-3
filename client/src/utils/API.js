@@ -42,8 +42,13 @@ const API = {
     },
     updateUser: function(body) {
         console.log("UPDATE USERS: ", body)
-    return axios.post("/api/users/update/" + body);
+    return axios.put("/api/users/update/" + body);
     },
+    updateUserSchedule: function(body) {
+        console.log("UPDATE USERS: ", body)
+    return axios.put("/api/users/changeSchedule/" + body);
+    },
+
 
 
 }

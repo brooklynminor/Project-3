@@ -30,15 +30,13 @@ class RegisterPet extends Component {
 
   async handleSubmit(e) {
       e.preventDefault();
-      const result = await API.addPet({ownerId: "5fc4688f94cdef670880b842",
+      const result = await API.addPet({ownerId: "5fc54d7abf66159da8a3e15b",
       petName: this.state.petName,
       breed: this.state.breed,
       size: this.state.size,
       note: this.state.note})
       console.log("ADD PET RESULT: ", result)
       await API.updateUser(result.data._id)
-      console.log('The form was submitted with the following data:');
-      console.log(this.state);
   }
   render() {
   return(
