@@ -29,10 +29,10 @@ class SignUpForm extends Component {
         API.addSchedule({
           petName: this.state.petName,
           ownerId:"5fc47f7e32d2ce756c5da8b7",
-          checkIn:"2020-11-30T06:53:32.200Z",
+          checkIn: "2020-11-30T06:53:32.200Z",
           checkOut: "2020-11-30T06:53:32.200Z"})
         console.log('The form was submitted with the following data:');
-        console.log(this.state);
+        console.log("CALENDAR PROP: ",Calendar(event.target));
     }
 
     render() {
@@ -48,7 +48,7 @@ class SignUpForm extends Component {
                 What days will your pup be here?
               </div>
               <div className="form-group mt-3 mb-4">
-                <Calendar/>
+                <Calendar startDate={}/>
               </div>
 
               <div className="form-group">
