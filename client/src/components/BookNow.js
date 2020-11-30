@@ -32,11 +32,7 @@ class SignUpForm extends Component {
           checkIn: "2020-11-30T06:53:32.200Z",
           checkOut: "2020-11-30T06:53:32.200Z"})
         console.log('The form was submitted with the following data:');
-<<<<<<< HEAD
-        console.log("CALENDAR PROP: ", Calendar(this.target));
-=======
         console.log("CALENDAR PROP: ");
->>>>>>> 7695040eb162c60c3764680bca6d89f66853ede1
     }
 
     render() {
