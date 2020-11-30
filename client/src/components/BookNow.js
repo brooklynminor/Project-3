@@ -3,7 +3,7 @@ import API from "../utils/API"
 import "react-calendar/dist/Calendar.css";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRangePicker } from "react-date-range";
+import { DateRange } from "react-date-range";
 import { addDays } from "date-fns";
 let startDate = ""
 let endDate = ""
@@ -22,7 +22,7 @@ function Schedule() {
   endDate = state[0].endDate
   return (
     <div className="container">
-      <DateRangePicker
+      <DateRange
         onChange={(item) => setState([item.selection])}
         showSelectionPreview={false}
         moveRangeOnFirstSelection={true}

@@ -75,13 +75,12 @@ class RegisterPet extends Component {
       </div>
       <div className="form-group">
           <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button>
-            </form>
             </div>
-          </div>
-      </div>
-      </form>
-      </div>
-      
+</form>   
+</div>
+</div>
+</div>
+</div>   
 );
 }
 }

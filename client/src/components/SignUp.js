@@ -77,6 +77,20 @@ class SignUpForm extends Component {
                   onChange={this.handleChange}
                 />
               </div>
+              <div className="form-group">
+                <label className="form-group__Label" htmlFor="email">
+                  E-Mail Address
+                </label>
+                <input
+                  type="email"
+                  id="emailAddress"
+                  className="form-control"
+                  placeholder="Enter your email"
+                  name="emailAddress"
+                  value={this.state.emailAddress}
+                  onChange={this.handleChange}
+                />
+              </div>
 
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="password">
@@ -89,20 +103,6 @@ class SignUpForm extends Component {
                   placeholder="Enter your password"
                   name="userPassword"
                   value={this.state.userPassword}
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="form-group">
-                <label className="form-group__Label" htmlFor="email">
-                  E-Mail Address
-                </label>
-                <input
-                  type="email"
-                  id="emailAddress"
-                  className="form-control"
-                  placeholder="Enter your email"
-                  name="emailAddress"
-                  value={this.state.emailAddress}
                   onChange={this.handleChange}
                 />
               </div>
