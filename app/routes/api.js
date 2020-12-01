@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Schedule = require("../models/schedule.js");
 const email = require('../db/email')
-const Pet = require("../models/PetDetail.js");
+const Pet = require("../models/petDetail.js");
 const User = require("../models/userDetail.js");
 const orm = require("../db/orm")
 

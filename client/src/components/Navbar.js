@@ -16,7 +16,6 @@ import UserContext from "../utils/userContext";
 import Profile from "../views/Profile";
 import RegisterPet from "../views/RegisterPet";
 import Slider from "../components/Slider";
-import SignInForm from "./signin"
 
 function Navbar() {
     const [id, setId] = useState([])
@@ -25,10 +24,6 @@ function Navbar() {
     useEffect(() => {
         setName()
       }, [])
-      function loadId(){
-          console.log("SET ID: ",SignInForm)
-        setId(SignInForm.userId?SignInForm.userId:"")
-      }
       function LoggedIn(){
           if(localStorage.userName){
           setName(localStorage.userName)
@@ -43,7 +38,7 @@ function Navbar() {
         localStorage.userId = ""
         setName("")
       }
-    console.log("NAVBAR CONTEXT SIGN IN: ", SignInForm.userId)
+    console.log("NAVBAR SIGN IN: ",localStorage.userName)
   return (
     <UserContext.Provider value={id}>
     <Router basename={process.env.PUBLIC_URL}>
@@ -60,7 +55,7 @@ function Navbar() {
                       <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenu2">
                       <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/profile">Profile</Link></button>
                       <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/register">Register Pet</Link></button>
-                      <button class="dropdown-item" type="button" onClick={LogOut}><Link class="dropdown-item" to="/BookNow">Reserve A Room</Link></button>
+                      <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/BookNow">Book Now</Link></button>
                         <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignIn">Sign-In</Link></button>
                         <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignUp">Sign-Up</Link></button>
                         <button class="dropdown-item" type="button" onClick={LogOut}><Link class="dropdown-item" to="/">Log Out</Link></button>

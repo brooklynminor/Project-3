@@ -67,7 +67,7 @@ class SignUpForm extends Component {
           ownerId: localStorage.userId,
           checkIn: startDate,
           checkOut: endDate})
-        API.updateUserSchedule({id: result.data._id, ownerId: result.data.ownerId})
+        API.updateUserSchedule({id: result.data._id, ownerId: localStorage.userId})
         console.log('The form was submitted with the following data:');
 
         console.log("CALENDAR PROP: ",result);

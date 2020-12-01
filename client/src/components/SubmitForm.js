@@ -61,7 +61,7 @@ class RegisterPet extends Component {
               </div>
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="email">Special Requirements</label>
-                <textarea type="note" id="emailAddress" className="form-control" placeholder="Enter ythe special requirements" name="note" value={this.state.note} onChange={this.handleChange} />
+                <textarea type="note" id="emailAddress" className="form-control" placeholder="Enter the special requirements" name="note" value={this.state.note} onChange={this.handleChange} />
               </div>
               <div className="form-group">
                   <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button>
