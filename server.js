@@ -8,8 +8,10 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
 
-app.use(express.static("public"));
+}
 
 mongoose.connect(process.env.MONGODB_URI ? process.env.MONGODB_URI : "mongodb://localhost:27017/petHotel_db", {
   useNewUrlParser: true,
