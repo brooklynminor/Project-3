@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI ? process.env.MONGODB_URI : "mongodb://
   useFindAndModify: false,
   useUnifiedTopology: true
 });
-
+console.log("DIRNAME PATH", __dirname)
 // routes
 app.use(require(path.join(__dirname, "app/routes/api.js")));
 
