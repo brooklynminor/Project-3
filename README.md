@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg "License Badge")
 
-Pet Hotel! is a booking app that lets users book their pets time at the pet hotel! ** ADD MORE INFO
+Pet Hotel! is a booking app that lets users book their pets time at the pet hotel!
 
 ## 🍔 Getting started
 
@@ -14,7 +14,7 @@ Pet Hotel! is a booking app that lets users book their pets time at the pet hote
 
 ## 💥 Issues
 
-** NEED TO ADD INFO
+Github was our biggest issue. Levis biggest issues were with the nodemailer package.
 
 ## 🍤 Contribution:
 
@@ -50,7 +50,7 @@ For additional questions please reach out to the team at: lhalvorson34@gmail.com
 
 ## 🎯 Links
 
-[Deployed Pet Hotel Website]()
+[Deployed Pet Hotel Website](https://protected-waters-04657.herokuapp.com/#/)
 
 ---
 
