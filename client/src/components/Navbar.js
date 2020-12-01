@@ -10,7 +10,7 @@ import BookNow from "./BookNow";
 import SignIn from "./signin";
 import SignUp from "./SignUp";
 import UserContext from "../utils/userContext";
-import "./style.css"
+// import "./style.css"
 
 // import Schedule from "./views/Schedule";
 import Profile from "../views/Profile";
