@@ -64,8 +64,9 @@ router.get("/api/users/login", async (req, res) => {
 router.put("/api/users/update/:id", async (req, res) => {
   console.log("IN UPDATE USERS: ", req.params);
   const petId = req.params.id;
+  const ownerId = req.params.ownerId
   const result = await User.updateOne(
-    { _id: "5fc54d7abf66159da8a3e15b" },
+    { _id: ownerId },
     { $push: { pets: petId } },
     { new: true }
   );
@@ -74,8 +75,9 @@ router.put("/api/users/update/:id", async (req, res) => {
 router.put("/api/users/changeSchedule/:id", async (req, res) => {
   console.log("IN UPDATE USERS SCHEDULE: ", req.params);
   const scheduleId = req.params.id;
+  const ownerId = req.params.ownerId
   const result = await User.updateOne(
-    { _id: "5fc54d7abf66159da8a3e15b" },
+    { _id: ownerId},
     { $push: { schedule: scheduleId } },
     { new: true }
   );

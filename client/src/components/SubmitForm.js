@@ -51,16 +51,16 @@ class RegisterPet extends Component {
               </div>
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="phone">Breed: </label>
-                <input type="text" id="breed" className="form-control" placeholder="Enter your phone number" name="breed" value={this.state.breed} onChange={this.handleChange} />
+                <input type="text" id="breed" className="form-control" placeholder="Enter your pets breed" name="breed" value={this.state.breed} onChange={this.handleChange} />
               </div>
 
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="password">Size: </label>
-                <input type="size" id="userPassword" className="form-control" placeholder="Enter your password" name="size" value={this.state.size} onChange={this.handleChange} />
+                <input type="size" id="userPassword" className="form-control" placeholder="Enter your pets size" name="size" value={this.state.size} onChange={this.handleChange} />
               </div>
               <div className="form-group">
                 <label className="form-group__Label" htmlFor="email">Special Requirements</label>
-                <textarea type="note" id="emailAddress" className="form-control" placeholder="Enter your email" name="note" value={this.state.note} onChange={this.handleChange} />
+                <textarea type="note" id="emailAddress" className="form-control" placeholder="Special requirements" name="note" value={this.state.note} onChange={this.handleChange} />
               </div>
               <div className="form-group">
                   <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button> 
