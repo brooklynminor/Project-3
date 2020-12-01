@@ -50,10 +50,10 @@ class SignInForm extends Component {
   render() {
     return (
       <Router>
-        <div className="container">
+        <div className="container mt-3">
           <div className="row justify-content-center pb-4">
-            <div className="col col-sm col-lg-6 col-xl-8 pt-2 ">
-              <div class="card pt-3 ">
+            <div className="col col-md-5 pt-2">
+              <div class="card pt-3">
                 <Card.Img
                   src="https://wtop.com/wp-content/uploads/2016/12/ThinkstockPhotos-509640879.jpg"
                   style={{ height: "250px", width:"auto"}}

@@ -38,13 +38,13 @@ function Navbar() {
   return (
     <UserContext.Provider value={id}>
     <Router basename={process.env.PUBLIC_URL}>
-            <nav className="navbar navbar-dark bg-dark">
-                <div className="align-items-center row">
-                <ul>
-                        <li className="nav-item active col-sm-5">
-                            <Link className="navbar-brand" to="/">Creature Comfort</Link>
-                        </li>
-                </ul>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div className="container-fluid">
+                
+                    <li className="nav-item active col-sm-3 text-align-center">
+                        <Link className="navbar-brand" to="/">Creature Comfort</Link>
+                    </li>
+                
                 <button class="navbar-toggler col-sm-5 p-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
