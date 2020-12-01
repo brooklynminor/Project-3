@@ -1,6 +1,6 @@
 const bcrypt = require( 'bcrypt' );
 const Schedule = require("../models/schedule.js");
-const Pet = require("../models/PetDetail.js");
+const Pet = require("../models/petDetail.js");
 const User = require("../models/userDetail.js");
 
 
