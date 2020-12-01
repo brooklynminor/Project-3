@@ -1,9 +1,31 @@
 .footer{
     min-height: 5vh;
-    
 }
-
 img {
     max-height: 87.5vh;
 }
-
+h2{
+    font-style: italic;
+    font-size: 100px;
+}
+.text-gradient1{
+    color: #FFFFFF;
+    background-image: linear-gradient(120deg, #FFD97F 0%, #F022D4 66.63%, #140116 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;    
+}
+.text-gradient2{
+    color: #FFFFFF;
+    background-image: linear-gradient(180deg, #B0B6DF 0%, #5C6FE9 66.63%, #6535EB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px; 
+}
+.text-gradient3{
+    color: #FFFFFF;
+    background-image: linear-gradient(75deg, #40E276 0%, #319DE6 66.63%, #F0E119 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px; 
+}

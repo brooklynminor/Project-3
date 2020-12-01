@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import API from "../utils/API";
+import SignIn from "./signin"
 
 class SignUpForm extends Component {
   constructor() {
@@ -40,10 +41,12 @@ class SignUpForm extends Component {
     });
     console.log("The form was submitted with the following data:");
     console.log(this.state);
+
   }
 
   render() {
     return (
+      <Router>
       <div className="container mt-3">
         <div className="row">
           <div className="col col-md-12 col-xl-10 col-lg-8 col-sm-6">
@@ -117,20 +120,18 @@ class SignUpForm extends Component {
                     onChange={this.handleChange}
                   />{" "}
                   I agree all statements in{" "}
-                  <a href="" className="form-TermsLink">
+                  <a href="#" className="form-TermsLink">
                     terms of service
                   </a>
                 </label>
               </div>
 
               <div className="form-group">
-                <button
-                  className="btn btn-primary mr-3 form-Button mr-20"
-                  onClick={this.handleSubmit}
-                >
-                  Sign Up
-                </button>{" "}
-                <Link to="./SignIn.js" className="form-group__Link">
+                
+                  <button onClick={this.handleSubmit} className="btn btn-primary mr-3 form-Button mr-20"><Link  to="/signin" className="btn btn-primary mr-3 form-Button mr-20">Sign Up</Link></button>
+                  
+                
+                <Link to="/SignIn" className="form-group__Link">
                   I'm already member
                 </Link>
               </div>
@@ -138,6 +139,12 @@ class SignUpForm extends Component {
           </div>
         </div>
       </div>
+      <Switch>
+      <Route path="/SignIn">
+        <SignIn />
+      </Route>
+    </Switch>
+  </Router>
     );
   }
 }

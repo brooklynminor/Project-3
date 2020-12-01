@@ -84,6 +84,9 @@ function Profile () {
                 </div>
 
             </div>
+            <div className='display-4 mb-3'>
+                Pets
+                </div >
             {users&&users.pets?users.pets.map(el=>{return(
             <ul className="list-group list-group-flush mb-5">
             <li className="list-group-item">

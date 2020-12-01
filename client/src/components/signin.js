@@ -95,8 +95,8 @@ class SignInForm extends Component {
                 </Card.Body>
                 <button
                   className="btn btn-primary  form-Button mr-20"
-                  onClick={this.handleSubmit}                >
-                  Sign In
+                  onClick={this.handleSubmit}                ><Link to="/profile" className="btn btn-primary  form-Button mr-20">
+                  Sign In</Link>
                 </button>
               </div>
             </div>

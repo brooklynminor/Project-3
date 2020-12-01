@@ -62,9 +62,9 @@ router.get("/api/users/login", async (req, res) => {
 });
 
 router.put("/api/users/update/:id", async (req, res) => {
-  console.log("IN UPDATE USERS: ", req.params);
-  const petId = req.params.id;
-  const ownerId = req.params.ownerId
+  console.log("IN UPDATE USERS: ", req.body);
+  const petId = req.body.params.id;
+  const ownerId = req.body.params.ownerId
   const result = await User.updateOne(
     { _id: ownerId },
     { $push: { pets: petId } },
@@ -72,10 +72,11 @@ router.put("/api/users/update/:id", async (req, res) => {
   );
   res.send(result);
 });
-router.put("/api/users/changeSchedule/:id", async (req, res) => {
-  console.log("IN UPDATE USERS SCHEDULE: ", req.params);
-  const scheduleId = req.params.id;
-  const ownerId = req.params.ownerId
+
+router.put("/api/users/updateSchedule/:id", async (req, res) => {
+  console.log("IN UPDATE USERS SCHEDULE: ", req.body.params);
+  const scheduleId = req.body.params.id;
+  const ownerId = req.body.params.ownerId
   const result = await User.updateOne(
     { _id: ownerId},
     { $push: { schedule: scheduleId } },
@@ -83,7 +84,6 @@ router.put("/api/users/changeSchedule/:id", async (req, res) => {
   );
   res.send(result);
 });
-
 
 router.post("/api/schedule", async ({ body }, res) => {
   const schedule = new Schedule(body);

@@ -42,12 +42,27 @@ const API = {
     return axios.post("/api/schedule", body);
     },
     updateUser: function(body) {
+        const id = body.id
+        const ownerId = body.ownerId
+
         console.log("UPDATE USERS: ", body)
-    return axios.put("/api/users/update/" + body);
+        return axios.put("/api/users/update/:id", {
+            params: {
+                id: id,
+                ownerId: ownerId
+            }
+        });
     },
     updateUserSchedule: function(body) {
-        console.log("UPDATE USERS: ", body)
-    return axios.put("/api/users/changeSchedule/" + body);
+        const id = body.id
+        const ownerId = body.ownerId
+        console.log("UPDATE USERS SCHEDULE: ", JSON.stringify(id))
+        return axios.put("/api/users/updateSchedule/:id", {
+            params: {
+                id: id,
+                ownerId: ownerId
+            }
+        });
     },
 
 
