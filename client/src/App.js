@@ -10,9 +10,9 @@ function App() {
       </header>
 
       
-      <div className="footer fixed-bottom bg-dark text-center text-white">
+      {/* <div className="footer fixed-bottom bg-dark text-center text-white">
         @Decoding Java Drinkers
-      </div>
+      </div> */}
     </div>
     
   );

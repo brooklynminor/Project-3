@@ -36,8 +36,11 @@ class SignInForm extends Component {
     console.log("In signin result:", result);
     if (result) {
       localStorage.userId = ""
+      localStorage.userName = ""
       console.log(result)
       localStorage.userId = result.userId
+      localStorage.userName = result.fullName
+
       console.log("USERID IN SIGN IN: ", this.state.userId)
     }
     // console.log('The form was submitted with the following data:');
