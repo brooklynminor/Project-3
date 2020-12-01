@@ -32,8 +32,8 @@ function Navbar() {
       function LoggedIn(){
           if(localStorage.userName){
           setName(localStorage.userName)
-          console.log(name)
-          return( <h7 className="text-light text-right">{name} is logged in</h7> )
+          console.log("logged in name",name)
+          return( <h7 className="text-dark text-right mb-1 mt-1">{name} is logged in</h7> )
         } else{
             return (null)
         }
@@ -47,50 +47,30 @@ function Navbar() {
   return (
     <UserContext.Provider value={id}>
     <Router basename={process.env.PUBLIC_URL}>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="container-fluid">
+            <nav className="navbar navbar-dark bg-dark row">
                 
-                    <li className="nav-item active col-sm-3 text-align-center">
+                    <li className="nav-item active">
                         <Link className="navbar-brand" to="/">Creature Comfort</Link>
-                    </li>
-                
-                <button class="navbar-toggler col-sm-5 p-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className='navbar-nav ml-3 mr-5'>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/BookNow">Book Now</Link>
-                        </li>
-                    </ul>
                     <div className="text-right">
-                    <LoggedIn/>
                     </div>
-                    <div class="dropdown col justify-content-end text-right">
+                    <div class="dropdown col justify-content-end text-right float-right">
                       <button class="btn btn-secondary dropdown-toggle justify-content-end text-right" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        More
+                        Menu
                       </button>
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                      <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdownMenu2">
                       <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/profile">Profile</Link></button>
                       <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/register">Register Pet</Link></button>
+                      <button class="dropdown-item" type="button" onClick={LogOut}><Link class="dropdown-item" to="/BookNow">Reserve A Room</Link></button>
                         <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignIn">Sign-In</Link></button>
                         <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignUp">Sign-Up</Link></button>
                         <button class="dropdown-item" type="button" onClick={LogOut}><Link class="dropdown-item" to="/">Log Out</Link></button>
-
                       </div>
                     </div>
-                    {/* <ul className='navbar-nav ml-3 float-right'>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/SignIn">Sign-In</Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/SignUp">Sign-Up</Link>
-                        </li>
+                    </li>
 
-                    </ul> */}
-                </div>
-                </div>
             </nav>
+            <LoggedIn/>
+
             <Switch>
                 <Route path="/profile">
                     <Profile />
