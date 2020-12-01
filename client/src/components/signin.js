@@ -3,7 +3,7 @@ import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import API from "../utils/API";
 import SignUp from "./SignUp";
-import Profile from "../views/Profile";
+import Slider from "./Slider";
 class SignInForm extends Component {
   constructor() {
     super();
@@ -98,7 +98,7 @@ class SignInForm extends Component {
                 </Card.Body>
                 <button
                   className="btn btn-primary  form-Button mr-20"
-                  onClick={this.handleSubmit}                ><Link to="/profile" className="btn btn-primary  form-Button mr-20">
+                  onClick={this.handleSubmit}                ><Link to="/" className="btn btn-primary  form-Button mr-20">
                   Sign In</Link>
                 </button>
               </div>
@@ -106,8 +106,8 @@ class SignInForm extends Component {
           </div>
         </div>
         <Switch>
-          <Route path="/profile">
-            <Profile />
+          <Route path="/">
+            <Slider />
           </Route>
           <Route path="/SignUp">
             <SignUp />

@@ -20,19 +20,28 @@ import SignInForm from "./signin"
 
 function Navbar() {
     const [id, setId] = useState([])
-    const [name, setName] = useState([])
+    const [name, setName] = useState("")
 
     useEffect(() => {
-        loadId()
+        setName()
       }, [])
       function loadId(){
           console.log("SET ID: ",SignInForm)
         setId(SignInForm.userId?SignInForm.userId:"")
       }
       function LoggedIn(){
-          setName(localStorage.userName?localStorage.userName:"")
+          if(localStorage.userName){
+          setName(localStorage.userName)
           console.log(name)
           return( <h7 className="text-light text-right">{name} is logged in</h7> )
+        } else{
+            return (null)
+        }
+      }
+      function LogOut(){
+        localStorage.userName = ""
+        localStorage.userId = ""
+        setName("")
       }
     console.log("NAVBAR CONTEXT SIGN IN: ", SignInForm.userId)
   return (
@@ -62,10 +71,12 @@ function Navbar() {
                         More
                       </button>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                      <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/profile">Profile</Link></button>
+                      <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/register">Register Pet</Link></button>
                         <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignIn">Sign-In</Link></button>
                         <button class="dropdown-item" type="button"><Link class="dropdown-item" to="/SignUp">Sign-Up</Link></button>
-                        <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/register">Register Pet</Link></button>
-                        <button class="dropdown-item" type="button"><Link className="dropdown-item" to="/profile">Profile</Link></button>
+                        <button class="dropdown-item" type="button" onClick={LogOut}><Link class="dropdown-item" to="/">Log Out</Link></button>
+
                       </div>
                     </div>
                     {/* <ul className='navbar-nav ml-3 float-right'>
