@@ -159,11 +159,26 @@ class RegisterPet extends Component {
                   </div>
                 </form>
               </div>
-            </div>
-          </div>
-       
-      </div>
-    );
-  }
+              <div className="form-group">
+                  <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button> 
+              </div>
+                <div className="form-group">
+                  <label className="form-group__Label" htmlFor="password">Size: </label>
+                  <input type="size" className="form-control" placeholder="Enter size of pet..." name="size" value={this.state.size} onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                  <label className="form-group__Label" htmlFor="email">Special Requirements: </label>
+                  <textarea type="note" className="form-control" placeholder="Enter any medical/special attention required..." name="note" value={this.state.note} onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                    <button className="btn btn-primary mr-3 form-Button mr-20" onClick={this.handleSubmit}>Register</button>
+                </div>
+</form>   
+</div>
+</div>
+</div>
+</div>   
+);
+}
 }
 export default RegisterPet;
