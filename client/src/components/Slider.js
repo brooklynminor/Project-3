@@ -6,7 +6,7 @@ export default function Slider(){
   return(
     <div>
     <div className="container-fluid">
-    <Carousel className="row">
+    <Carousel>
       <Carousel.Item interval={3000}>
         <img className="d-block w-100" src="https://www.safewise.com/app/uploads/2020/06/pets-social.jpg" alt="First slide"/>
         <Carousel.Caption>
